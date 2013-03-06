@@ -10,9 +10,9 @@
 * Compiler: Java 7.0
 * Platform: Windows 
 *
-* Description : This class maintains contacts
+* Description : This class maintains a contact list
 * 	An instance of this class always refers 
-* 	to a contact  
+* 	to an instance of a class Contact
 */
 
 public class ContactList {
