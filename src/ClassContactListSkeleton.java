@@ -6,7 +6,7 @@ public class ContactListSkeleton {
 
 	private List<Contact> contactList = new ArrayList<Contact>();
 
-	public void newContact(){
+	public void addContact(){
 
 	}
 
