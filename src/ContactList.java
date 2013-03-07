@@ -15,6 +15,7 @@
 * 	to an instance of a class Contact
 */
 
+import java.util.*;
 
 public class ContactList {
 
@@ -41,7 +42,7 @@ public class ContactList {
 	 *
 	 */
 	public String printContactList(){
-
+		return "The contact list has been printed";
 	}
 
 	/**
@@ -49,7 +50,7 @@ public class ContactList {
 	 *
 	 */
 	public String getContactByLastName(String lname){
-
+		return "Here are the contacts with that last name";
 	}
 
 	/**
@@ -57,7 +58,7 @@ public class ContactList {
 	 *
 	 */
 	public String getContactByEmail(String email){
-
+		return "Here are the contacts with that email address";
 	}
 
 	/**
@@ -65,7 +66,7 @@ public class ContactList {
 	 *
 	 */
 	public String getContactsByZip(String zip){
-
+		return "Here are the contacts with that zip code";
 	}
 
 	/**
