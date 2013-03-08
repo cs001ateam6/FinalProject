@@ -62,59 +62,55 @@ public class TestContactList {
 	}
 }
 
-/*--------------------- PASTE OF RUN FROM CONSOLE --------------------------
+/*----------------------PASTE OF RUN FROM CONSOLE--------------------
 
-You have initialized your contact list
+Main Menu:
+1. Add a new contact
+2. Print the contact list
+3. Get contact information by last name
+4. Get contact information by email address
+5. Get contact information by zip code
+Select menu: 1
+Add new contact
+Main Menu:
+1. Add a new contact
+2. Print the contact list
+3. Get contact information by last name
+4. Get contact information by email address
+5. Get contact information by zip code
+Select menu: 
+2
+Print the contact list
+Main Menu:
+1. Add a new contact
+2. Print the contact list
+3. Get contact information by last name
+4. Get contact information by email address
+5. Get contact information by zip code
+Select menu: 3
+Get info by last name
+Main Menu:
+1. Add a new contact
+2. Print the contact list
+3. Get contact information by last name
+4. Get contact information by email address
+5. Get contact information by zip code
+Select menu: 4
+Get info by email address
+Main Menu:
+1. Add a new contact
+2. Print the contact list
+3. Get contact information by last name
+4. Get contact information by email address
+5. Get contact information by zip code
+Select menu: 5
+Get email by zip code
+Main Menu:
+1. Add a new contact
+2. Print the contact list
+3. Get contact information by last name
+4. Get contact information by email address
+5. Get contact information by zip code
+Select menu: 
 
-You have initialized all of this contact's variables
-Contact's last name has been set
-Contact's first name has been set
-Contact's address has been set
-Contact's email address has been set
-Contact's phone # has been set
-Contact's additional notes have been set
-Index of this contact is: 0
-Contact Details:
-Ryan Jacobson
-345 Padalecki Lane Los Altos CA 88888
-ryan345@startup.com
-6505556666
-Note: this is a sample contact
-
-You have initialized all of this contact's variables
-Contact's last name has been set
-Contact's first name has been set
-Contact's address has been set
-Contact's email address has been set
-Contact's phone # has been set
-Contact's additional notes have been set
-Index of this contact is: 1
-Contact Details:
-Matt Addison
-987 Ackles Avenue Los Altos CA 88888
-matthew_rocks@startup.com
-6509884566
-Note: this is a sample contact
-
-Your contact list has been saved to disk.
-
-Here is the main menu. It will be called by the UI
-Main Menu. Type the corresponding number: 
-1 to find a contact
-2 to print the whole list, sorted by last name
-3 to add a new contact
-
-What would you like to search by? Type the corresponding number:
-1 to search by last name
-2 to search by e-mail address
-3 to search by zip code
-Type the keyword you want to search for.
-
-This test program will now pass '1' and 'Jacobson' to searchBy()
-You have called searchBy()
-
-You have called printContactList() and your list will be printed shortly
-The contact list has been printed
-
-
------------------------------------------------------------------------------*/
+---------------------------------------------*/

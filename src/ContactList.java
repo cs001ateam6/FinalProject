@@ -69,27 +69,6 @@ public class ContactList implements Serializable {
 	----------------------------------------------------*/
 	
 	/**
-	 * Elena: This method is called when a user chooses 'find' from the Main Menu.
-	 */
-	public void findContact(){
-		int type;
-		type = 0;
-		String keyword;
-		keyword = "chosen keyword";
-		
-		System.out.println("What would you like to search by? Type the corresponding number:");
-		//We use numbers instead of words here to make it harder for a user to enter something invalid.
-		System.out.println("1 to search by last name");
-		System.out.println("2 to search by e-mail address");
-		System.out.println("3 to search by zip code");
-		//Scan for answer to set int type
-		
-		System.out.println("Type the keyword you want to search for.");
-		//Scan for an answer to set String keyword
-		//Pass type and keyword to searchBy()
-	}
-	
-	/**
 	 * Elena: This method finds contacts by allowing a user to search by a type and a keyword.
 	 * A user can only search by last name, e-mail address, or zip code, which is determined by an integer as follows:
 	 * 1 searches by last name
@@ -126,22 +105,50 @@ public class ContactList implements Serializable {
 		return "The contact list has been printed";
 	}
 	
-	/**
-	 * Elena: This method is the main menu. 
-	 * It is called whenever a use case has been completed, and the user is ready to do something else.
-	 */
-	public void mainMenu(){
-		int userChooses;
-		userChooses = 0;
-			
-		System.out.println("Main Menu. Type the corresponding number: ");
-		System.out.println("1 to find a contact"); //calls findContact()
-		System.out.println("2 to print the whole list, sorted by last name"); //calls printContactList()
-		System.out.println("3 to add a new contact"); //calls addContact()
-		System.out.println();
-		//scans for user input
-		//implement a switch statement to continue
-		//once an action has been completed, call mainMenu() and print this menu again and start a new action.
-	}
-	
 }
+
+/*--------------------- PASTE OF RUN FROM CONSOLE --------------------------
+
+You have initialized your contact list
+
+You have initialized all of this contact's variables
+Contact's last name has been set
+Contact's first name has been set
+Contact's address has been set
+Contact's email address has been set
+Contact's phone # has been set
+Contact's additional notes have been set
+Index of this contact is: 0
+Contact Details:
+Ryan Jacobson
+345 Padalecki Lane Los Altos CA 88888
+ryan345@startup.com
+6505556666
+Note: this is a sample contact
+
+You have initialized all of this contact's variables
+Contact's last name has been set
+Contact's first name has been set
+Contact's address has been set
+Contact's email address has been set
+Contact's phone # has been set
+Contact's additional notes have been set
+Index of this contact is: 1
+Contact Details:
+Matt Addison
+987 Ackles Avenue Los Altos CA 88888
+matthew_rocks@startup.com
+6509884566
+Note: this is a sample contact
+
+Your contact list has been saved to disk.
+
+This test program will now pass '1' and 'Jacobson' to searchBy()
+You have called searchBy()
+
+You have called printContactList() and your list will be printed shortly
+The contact list has been printed
+
+
+
+-----------------------------------------------------------------------------*/
