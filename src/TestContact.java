@@ -28,10 +28,6 @@ public class TestContact {
 		test.setPhoneNumber("408-454-8888");
 		test.setEmailAddress("johnsmith@startup.com");
 		test.addNotes("This is a sample contact.");
-		
-		//Test if values are valid. These methods will actually be private to class Contact
-		test.isNameValid();
-		test.isEmailValid();
 	
 		//Get contact's info
 		System.out.println();

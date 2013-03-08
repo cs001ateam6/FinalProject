@@ -14,36 +14,27 @@
 * 			    cases on ContactList class 
 */
 
+
+/**
+ * This class will test the Contact List Class
+ */
+
+
 public class TestContactList {
-	public static void main(String args[]) {
-		
-		//Create a new Contact List
-		ContactList test;
-		test = new ContactList();
-		
-		System.out.println();
-		
-		//Add a new contact to it and fetch it by its position in the contact list
-		test.addContact("Jacobson", "Ryan", "345 Padalecki Lane Los Altos CA 88888", "ryan345@startup.com", "6505556666", "this is a sample contact");
-		System.out.println(test.getByIndex(0).getContactInfo());
-		System.out.println();
-		
-		//Add another contact and fetch it by its position in the contact list
-		test.addContact("Addison", "Matt", "987 Ackles Avenue Los Altos CA 88888", "matthew_rocks@startup.com", "6509884566", "this is a sample contact");
-		System.out.println(test.getByIndex(1).getContactInfo());
-		System.out.println();
-		
-		//Print the contact list
-		System.out.println(test.printContactList());
-		
-		System.out.println();
-		
-		//Save to disk
-		test.saveToDisk();
-		
-		System.out.println();
-		
-		//Search for a contact
-		test.searchContactList("last name", "Jacobson");
+
+	ContactList testlist = new ContactList;
+	
+//Anaga: This method will test to see whether the list can identify the contact by last name	
+	testlist.getContactByLastName("LastName");
+	//Anaga: This method will test to see whether the list can identify the contact by email address
+	testlist.getContactByEmail("Email");
+
+	// Anaga: This method will test to see whether the list can identify contacts in a given zipcode area
+	testlist.getContactsByZip("Zip");
+
+	//This method will test the program's ability to print the entire list by last name order
+	testlist.printContactList();
+	
 	}
+
 }
