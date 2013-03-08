@@ -1,4 +1,4 @@
-/*
+/**
  * Program: Contact
  *
  * Author: Team 6
@@ -17,7 +17,7 @@
 
 import java.io.Serializable;
 
-/* 
+/**
  * Implement Serialization so we can write to disk 
  */
 
@@ -127,14 +127,14 @@ public class Contact implements Serializable   {
 		
 	
 	/*----------------------------------------------------
-	 * Validation methods
+	 * Validation methods: these will be PRIVATE and be called when calling set methods
 	----------------------------------------------------*/
 
 	/**
 	 * Satyen:
 	 * This method validates the contact name
 	 */
-	private boolean isNameValid() {
+	public boolean isNameValid() {
 		System.out.println("You have called isNameValid()");
 		return true;
 	}
@@ -143,7 +143,7 @@ public class Contact implements Serializable   {
 	 * Satyen:
 	 * This method validates the email address
 	 */
-	private boolean isEmailValid() {
+	public boolean isEmailValid() {
 		System.out.println("You have called isEmailValid()");
 		return true;
 	}
