@@ -1,33 +1,64 @@
-class ContactList {
-
 /**
- * Anaga: First create an arrayList where contacts can be stored
- * members of this array will be composed of various Contacts
+ * Program: ContactList
+ *
+ * Author: Team 6
+ * Written: Mar 07, 2013
+ *
+ * Course: CS 001A (Java) Winter 2013
+ * Assignment: Final Project
+ *
+ * Compiler: Java 7.0
+ * Platform: Windows 
+ *
+ * Description : This program stores a Contact List in an arrayList of type Contact. It allows you to search
+ * for a contact by last name, e-mail address, and zip code; it allows you to print the entire contact list;
+ * and it allows you to save the Contact List to disk.
+ *
  */
-	Contacts[] list; 
-    list = new Contacts[MaxSize];    
+import java.util.*;
+public class ContactList {
 
+	/**
+	 * Anaga: First create an arrayList where contacts can be stored
+	 * members of this array will be composed of various Contacts
+	 */
 	/*----------------------------------------------------
 	 * Constructors 
 	----------------------------------------------------*/
-	
+	List<Contact> contactList = new ArrayList<Contact>();
 	/**
 	 * Anaga: This is the constructor which will initialize the size of the arrayList (contact database)
 	 */
 	public ContactList() {
-	System.out.println(" Here we initialize the size of the array");	
+		System.out.println("You have initialized your contact list");
 	}
 		
 	/*----------------------------------------------------
 	 * Methods to build database array
 	---------------------------------------------------- */
 	
+	/**
+	 * Elena:
+	 * This method will add a new Contact to the ContactList. Contact must have a last name to be added.
+	 */
+	public void addContact(String lastName, String firstName, String streetAddress, String emailAddress, String phoneNumber, String addedNotes){
+		Contact addedContact = new Contact();
+		contactList.add( addedContact );
+		addedContact.setLastName(lastName);
+		addedContact.setFirstName(firstName);
+		addedContact.setStreetAddress(streetAddress);
+		addedContact.setEmailAddress(emailAddress);
+		addedContact.setPhoneNumber(phoneNumber);
+		addedContact.addNotes(addedNotes);
+		System.out.println("Index of this contact is: " + contactList.indexOf(addedContact));
+	}
 	
 	/**
 	 * Elena:
 	 * This method will return the entire contact list as a string.
 	 */
 	public String printContactList() {
+		System.out.println("You have called printContactList() and your list will be printed shortly");
 		return "The contact list has been printed";
 	}
 
@@ -36,8 +67,8 @@ class ContactList {
 	 * This method will save the contact list as it has been entered during the
 	 * current session to disk.
 	 */
-	
 	public void saveToDisk() {
+		System.out.println("Your contact list has been saved to disk.");
 	}
 	
 	/*----------------------------------------------------
@@ -45,34 +76,16 @@ class ContactList {
 	----------------------------------------------------*/
 	/**
 	 * Elena:
-	 * This method will by their given last name.
+	 * This method will find contacts by allowing a user to search by a type and a keyword.
+	 * For example, to search for a contact by e-mail, a user must first choose a type: email address,
+	 * and then input the e-mail address itself.
 	 * 
 	 */
-	public String getContactByLastName(String lname) {
-		return "Here are the contact with that last name";
+	public void searchContactList(String type, String keyword){
+		System.out.println("You have called searchContactList()");
 	}
-
-	/**
-	 * Elena:
-	 * This method will return the contact with the given email address.
-	 * 
-	 */
-	public String getContactByEmail(String email) {
-		return "Here are the contacts with that email address";
+	
+	public Contact getByIndex(int index){
+		return contactList.get(index);
 	}
-
-	/**
-	 * Elena:
-	 * This method will return all contacts with a given zip code.
-	 * 
-	 */
-	public String getContactsByZip(String zip) {
-		return "Here are the contacts with that zip code";
-	}
-
 }
-
-/**
- * Tests the class skeleton for class Contact.
- *
- */
