@@ -1,19 +1,36 @@
+/**
+ * Program: TestContact
+ *
+ * Author: Team 6
+ * Written: Mar 07, 2013
+ *
+ * Course: CS 001A (Java) Winter 2013
+ * Assignment: Final Project
+ *
+ * Compiler: Java 7.0
+ * Platform: Windows 
+ *
+ * Description : This program tests all the methods in class Contact.
+ *
+ */
+
 public class TestContact {
 	public static void main(String args[]) {
 		
-		Contacts test;
-		test = new Contacts();
+		//Create new contact
+		Contact test;
+		test = new Contact();
 		
-		test.setFirstName("FIRSTNAME");
-		test.setLastName("LASTNAME");
-		test.setStreetAddress("STREETADDRESS");
-		test.setPhoneNumber("### ### ####");
-		test.setEmailAddress("xxx@yyy.com");
-		test.addNotes("NOTES NOTES NOTES");
+		//Set values
+		test.setFirstName("John");
+		test.setLastName("Smith");
+		test.setStreetAddress("123 Jensen Avenue, Mountain View, CA 94040");
+		test.setPhoneNumber("408-454-8888");
+		test.setEmailAddress("johnsmith@startup.com");
+		test.addNotes("This is a sample contact.");
 	
-		
-		test.getContactInfo();
-		
-		
+		//Get contact's info
+		System.out.println();
+		System.out.println(test.getContactInfo());
 	}
 }
