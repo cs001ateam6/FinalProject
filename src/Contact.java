@@ -1,4 +1,3 @@
-
 /*
  * Program: Contact
  *
@@ -37,18 +36,9 @@ public class Contact implements  Serializable   {
 	----------------------------------------------------*/
 	
 	/**
-	 * This method is the constructor. It initializes all of this class's
-	 * private variables to a space, so that if one of them is not set and the
-	 * contact is printed, it will not show.
-	 */
-	public Contact() {
-		System.out.println("You have initialized all of this contact's variables");
-	}
-
-	/**
 	 * Satyen: This constructor takes all contact values 
 	 */
-	public Contact(String firstName, String lastName, String streetAddress, String zipCode,
+	public void Contact(String firstName, String lastName, String streetAddress, String zipCode,
 			String emailAddress, String phoneNumber, String addedNotes) {
 		System.out.println("You have initialized all of this contact's variables");
 	}
@@ -57,9 +47,6 @@ public class Contact implements  Serializable   {
 	 * Properties
 	----------------------------------------------------*/
 
-	/** 
-	 * Satyen: What about the get methods? 
-	 */
 	
 	/**
 	 * Elena:
@@ -67,7 +54,7 @@ public class Contact implements  Serializable   {
 	 * this method.
 	 */
 	public void setFirstName(String fName) {
-		System.out.println("You have called setFirstName() and set the contact's first name");
+		System.out.println("user's first name");
 	}
 
 	/**
@@ -76,7 +63,7 @@ public class Contact implements  Serializable   {
 	 * this method.
 	 */
 	public void setLastName(String lName) {
-		System.out.println("You have called setLastName() and set the contact's last name");
+		System.out.println("user's last name");
 	}
 
 	/**
@@ -87,7 +74,7 @@ public class Contact implements  Serializable   {
 	 * It also sets zipCode to the last 5 characters of stAddress.
 	 */
 	public void setStreetAddress(String stAddress) {
-		System.out.println("You have called setStreetAddress");
+		System.out.println("user's address");
 	}
 
 	/**
@@ -96,7 +83,7 @@ public class Contact implements  Serializable   {
 	 * passed to this method.
 	 */
 	public void setEmailAddress(String eAddress) {
-		System.out.println("You have called setEmailAddress");
+		System.out.println("user's email");
 	}
 
 	/**
@@ -105,7 +92,7 @@ public class Contact implements  Serializable   {
 	 * passed to this method.
 	 */
 	public void setPhoneNumber(String phnNumber) {
-		System.out.println("You have called setPhoneNumber");
+		System.out.println("user's phone #");
 	}
 
 	/**
@@ -114,23 +101,19 @@ public class Contact implements  Serializable   {
 	 * to the string notes, passed to this method.
 	 */
 	public void addNotes(String notes) {
-		System.out.println("You have called addNotes()");
+		System.out.println("user's additional notes");
 	}
-
-	/*----------------------------------------------------
-	 * Other methods
-	----------------------------------------------------*/
-
-	/**
-	 * Elena:
-	 * This method prints the contact's information in a formatted String. It
-	 * returns a String.
+	
+	/** 
+	 * Anaga: This method returns the contact’s attributes in a string
 	 */
-	public String toString() {
-		System.out.println("You have called toString()");
-		return "You have printed the contact information to String";
+	public String getContactInfo() {
+		String contact_string = "Contact Details" + "\n" + firstName + "\n" +  lastName + "\n" + streetAddress + "\n" + zipCode
+				+ "\n" + emailAddress + "\n" + phoneNumber + "\n" + addedNotes;
+		return contact_string;
 	}
-
+		
+	
 	/*----------------------------------------------------
 	 * Validation methods
 	----------------------------------------------------*/
