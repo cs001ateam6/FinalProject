@@ -47,8 +47,7 @@ public class Contact implements Serializable {
 		emailAddress = " ";
 		phoneNumber = " ";
 		addedNotes = " ";
-		System.out
-				.println("You have initialized all of this contact's variables");
+		System.out.println("You have initialized all of this contact's variables");
 	}
 
 	/*----------------------------------------------------

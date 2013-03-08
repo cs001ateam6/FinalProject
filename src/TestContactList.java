@@ -22,8 +22,7 @@ public class TestContactList {
 
 		System.out.println();
 
-		// Add a new contact to it and fetch it by its position in the contact
-		// list
+		// Add a new contact to it and fetch it by its position in the contact list
 		contactList.addContact("Jacobson", "Ryan",
 				"345 Padalecki Lane Los Altos CA 88888", "ryan345@startup.com",
 				"6505556666", "this is a sample contact");
@@ -39,17 +38,26 @@ public class TestContactList {
 		System.out.println(contactList.getByIndex(1).getContactInfo());
 		System.out.println();
 
-		// Print the contact list
-		System.out.println(contactList.printContactList());
-
-		System.out.println();
-
 		// Save to disk
 		contactList.saveToDisk();
-
 		System.out.println();
-
+		
+		//Call the main menu
+		System.out.println("Here is the main menu. It will be called by the UI");
+		contactList.mainMenu();
+		
 		// Search for a contact
-		contactList.searchContactList(1, "Jacobson");
+		contactList.findContact();
+		System.out.println();
+		
+		// Call searchBy()
+		// Usually findContact() will call searchBy()
+		System.out.println("This test program will now pass '1' and 'Jacobson' to searchBy()");
+		System.out.println(contactList.searchBy(1, "Jacobson"));
+		System.out.println();
+		
+		// Print the contact list
+		System.out.println(contactList.printContactList());
+		System.out.println();	
 	}
 }
