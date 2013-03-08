@@ -38,3 +38,24 @@ public class TestContact {
 		System.out.println(test.getContactInfo());
 	}
 }
+
+/*--------------------- PASTE OF RUN FROM CONSOLE --------------------------
+
+You have initialized all of this contact's variables
+Contact's first name has been set
+Contact's last name has been set
+Contact's address has been set
+Contact's phone # has been set
+Contact's email address has been set
+Contact's additional notes have been set
+You have called isNameValid()
+You have called isEmailValid()
+
+Contact Details:
+John Smith
+123 Jensen Avenue, Mountain View, CA 94040
+johnsmith@startup.com
+408-454-8888
+Note: This is a sample contact.
+
+-----------------------------------------------------------------------------*/
