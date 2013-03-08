@@ -1,0 +1,172 @@
+Fake Run Recording: User input in [brackets]
+
+------------------------------------------------------
+
+Welcome to your contact list!
+
+Main Menu. 
+1. Add a new contact
+2. Print the contact list
+3. Search for a contact
+Select menu item: [1]
+
+You have selected to add a new contact. 
+What is their last name?
+[Stevenson]
+What is their first name?
+[Bryan]
+Enter their street address in a single line:
+[8888 Implausible Ave St. Petersburg, CA 96777]
+What is their email address?
+[bryan.stevenson@startup.com]
+What is their phone number?
+[708-342-0909]
+Add any notes to this contact:
+[This is a sample contact]
+
+Here is your contact:
+Bryan Stevenson
+8888 Implausible Ave St Petersburg, CA 96777
+bryan.stevenson@startup.com
+708-342-0909
+Note: This is a sample contact
+
+Main Menu.
+1. Add a new contact
+2. Print the contact list
+3. Search for a contact
+Select menu item: [1]
+
+You have selected to add a new contact. 
+What is their last name?
+[Wickham]
+What is their first name?
+[George]
+Enter their street address in a single line:
+[1800 Austen Lane England, OR 78334]
+What is their email address?
+[wickham.george@pemberley.com]
+What is their phone number?
+[145-772-3455]
+Add any notes to this contact:
+[This is a sample contact]
+
+Here is your new contact:
+George Wickham
+1800 Austen Lane England, OR 78334
+wickham.george@pemberley.com
+145-772-3455
+Note: This is a sample contact
+
+Main Menu.
+1. Add a new contact
+2. Print the contact list
+3. Search for a contact
+Select menu item: [2]
+
+Here is your entire contact list, sorted by last name:
+
+Bryan Stevenson
+8888 Implausible Ave St Petersburg, CA 96777
+bryan.stevenson@startup.com
+708-342-0909
+Note: This is a sample contact
+
+Mary Stevenson
+8888 Implausible Ave St Petersburg, CA 96777
+mary7588@mail.org
+708-342-0998
+Note: This is a sample contact
+
+George Wickham
+1800 Austen Lane England, OR 78334
+wickham.george@pemberley.com
+145-772-3455
+Note: This is a sample contact
+
+William Darcy
+1405 Prejudice St. England, OR 78334
+darcy.william@pemberley.com
+145-867-3454
+Note: This is a sample contact
+
+Main Menu.
+1. Add a new contact
+2. Print the contact list
+3. Search for a contact
+Select menu item: [3]
+
+You have chosen to search for a contact.
+1. Search by last name
+2. Search by email address
+3. Search by zip code
+Select menu item: [1]
+
+Enter the contact's last name:
+[Stevenson]
+
+Here are the contacts with that last name:
+
+Bryan Stevenson
+8888 Implausible Ave St Petersburg, CA 96777
+bryan.stevenson@startup.com
+708-342-0909
+Note: This is a sample contact
+
+Mary Stevenson
+8888 Implausible Ave St Petersburg, CA 96777
+mary7588@mail.org
+708-342-0998
+Note: This is a sample contact
+
+Main Menu.
+1. Add a new contact
+2. Print the contact list
+3. Search for a contact
+Select menu item: [3]
+
+You have chosen to search for a contact.
+1. Search by last name
+2. Search by email address
+3. Search by zip code
+Select menu item: [2]
+
+Enter the contact's email address:
+[darcy.william@pemberley.com]
+
+Here are the contacts with that email address:
+
+William Darcy
+1405 Prejudice St. England, OR 78334
+darcy.william@pemberley.com
+145-867-3454
+Note: This is a sample contact
+
+Main Menu.
+1. Add a new contact
+2. Print the contact list
+3. Search for a contact
+Select menu item: [3]
+
+You have chosen to search for a contact.
+1. Search by last name
+2. Search by email address
+3. Search by zip code
+Select menu item: [3]
+
+Enter the contact's zip code:
+[78334]
+
+Here are the contacts witht that zip code:
+
+George Wickham
+1800 Austen Lane England, OR 78334
+wickham.george@pemberley.com
+145-772-3455
+Note: This is a sample contact
+
+William Darcy
+1405 Prejudice St. England, OR 78334
+darcy.william@pemberley.com
+145-867-3454
+Note: This is a sample contact
