@@ -57,11 +57,11 @@ class ContactListUI {
 	 * Display a menu for all use cases
 	 */
 	private static void displayMenu() {
-		System.out.println("1. Perform user case 1");
-		System.out.println("2. Perform user case 2");
-		System.out.println("3. Perform user case 3");
-		System.out.println("4. Perform user case 4");
-		System.out.println("5. Perform user case 5");
+		System.out.println("1. Add a new contact");
+		System.out.println("2. Print the contact list");
+		System.out.println("3. Get contact information by last name");
+		System.out.println("4. Get contact information by email address");
+		System.out.println("5. Get contact information by zip code");
 		System.out.print("Select menu: ");
 	}
 
@@ -70,7 +70,7 @@ class ContactListUI {
 	 * Use case 1: Enter a new person
 	 */
 	private static void useCase1() {
-		System.out.println("Perform user case 1");
+		System.out.println("Add new contact");
 	}
 
 	/**
@@ -78,7 +78,7 @@ class ContactListUI {
 	 * Use case 2: Print the contact list
 	 */
 	private static void useCase2() {
-		System.out.println("Perform user case 2");
+		System.out.println("Print the contact list");
 	}
 
 
@@ -88,7 +88,7 @@ class ContactListUI {
 	 */
 
 	private static void useCase3() {
-		System.out.println("Perform user case 3");	
+		System.out.println("Get info by last name");	
 	}
 
 	/**
@@ -96,7 +96,7 @@ class ContactListUI {
 	 * 	Use case 4: Retrieve a person's information by email address
 	 */
 	private static void useCase4() {
-		System.out.println("Perform user case 4");	
+		System.out.println("Get info by email address");	
 	}
 
 	/**
@@ -104,6 +104,6 @@ class ContactListUI {
 	 * 	Use case 5: Retrieve all people who live in a given zip code
 	 */
 	private static void useCase5() {
-		System.out.println("Perform user case 5");	
+		System.out.println("Get email by zip code");	
 	}
 }
