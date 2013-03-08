@@ -16,76 +16,80 @@
  *
  */
 import java.util.*;
+
 public class ContactList {
 
 	/**
-	 * Anaga: First create an arrayList where contacts can be stored
-	 * members of this array will be composed of various Contacts
+	 * Anaga: First create an arrayList where contacts can be stored members of
+	 * this array will be composed of various Contacts
 	 */
 	/*----------------------------------------------------
 	 * Constructors 
 	----------------------------------------------------*/
 	List<Contact> contactList = new ArrayList<Contact>();
+
 	/**
-	 * Anaga: This is the constructor which will initialize the size of the arrayList (contact database)
+	 * Anaga: This is the constructor which will initialize the size of the
+	 * arrayList (contact database)
 	 */
 	public ContactList() {
 		System.out.println("You have initialized your contact list");
 	}
-		
+
 	/*----------------------------------------------------
 	 * Methods to build database array
 	---------------------------------------------------- */
-	
+
 	/**
-	 * Elena:
-	 * This method will add a new Contact to the ContactList. Contact must have a last name to be added.
+	 * Elena: This method will add a new Contact to the ContactList. Contact
+	 * must have a last name to be added.
 	 */
-	public void addContact(String lastName, String firstName, String streetAddress, String emailAddress, String phoneNumber, String addedNotes){
+	public void addContact(String lastName, String firstName, String streetAddress, 
+			String emailAddress, String phoneNumber,String addedNotes) {
 		Contact addedContact = new Contact();
-		contactList.add( addedContact );
+		contactList.add(addedContact);
 		addedContact.setLastName(lastName);
 		addedContact.setFirstName(firstName);
 		addedContact.setStreetAddress(streetAddress);
 		addedContact.setEmailAddress(emailAddress);
 		addedContact.setPhoneNumber(phoneNumber);
 		addedContact.addNotes(addedNotes);
-		System.out.println("Index of this contact is: " + contactList.indexOf(addedContact));
+		System.out.println("Index of this contact is: "
+				+ contactList.indexOf(addedContact));
 	}
-	
+
 	/**
-	 * Elena:
-	 * This method will return the entire contact list as a string.
+	 * Elena: This method will return the entire contact list as a string.
 	 */
 	public String printContactList() {
-		System.out.println("You have called printContactList() and your list will be printed shortly");
+		System.out
+				.println("You have called printContactList() and your list will be printed shortly");
 		return "The contact list has been printed";
 	}
 
 	/**
-	 * Elena:
-	 * This method will save the contact list as it has been entered during the
-	 * current session to disk.
+	 * Elena: This method will save the contact list as it has been entered
+	 * during the current session to disk.
 	 */
 	public void saveToDisk() {
 		System.out.println("Your contact list has been saved to disk.");
 	}
-	
+
 	/*----------------------------------------------------
 	 * Retrieval methods
 	----------------------------------------------------*/
 	/**
-	 * Elena:
-	 * This method will find contacts by allowing a user to search by a type and a keyword.
-	 * For example, to search for a contact by e-mail, a user must first choose a type: email address,
-	 * and then input the e-mail address itself.
+	 * Elena: This method will find contacts by allowing a user to search by a
+	 * type and a keyword. For example, to search for a contact by e-mail, a
+	 * user must first choose a type: email address, and then input the e-mail
+	 * address itself.
 	 * 
 	 */
-	public void searchContactList(String type, String keyword){
+	public void searchContactList(Integer type, String searchString) {
 		System.out.println("You have called searchContactList()");
 	}
-	
-	public Contact getByIndex(int index){
+
+	public Contact getByIndex(int index) {
 		return contactList.get(index);
 	}
 }
