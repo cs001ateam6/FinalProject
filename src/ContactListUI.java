@@ -18,13 +18,13 @@
 import java.util.*;
 
 /**
- * Satyen: Console based use to handle all use cases
+ * Console based use to handle all use cases
  */
 public class ContactListUI {
 
-	private static ContactList contactList; 
+	private ContactList contactList; 
 	
-	public static void main(String[] args) {
+	public void Show() {
 		
 		//Define local variable 
 		int menuSelected = 0;
@@ -58,7 +58,7 @@ public class ContactListUI {
 	/**
 	 * Display a menu for all use cases
 	 */
-	private static void displayMenu() {
+	private void displayMenu() {
 		System.out.println("************************************************");
 		System.out.println("Main Menu:");
 		System.out.println("************************************************");
@@ -75,7 +75,7 @@ public class ContactListUI {
 	 * Use case 1: 
 	 * Enter a new person, Last name contact be blank
 	 */
-	private static void useCase1() {
+	private void useCase1() {
 		System.out.println("-------------------------------------------------");
 		System.out.println("Enter contact details");
 		System.out.println("-------------------------------------------------");
@@ -94,7 +94,7 @@ public class ContactListUI {
 	 * information about all contacts to the console, 
 	 * sorted by last name.
 	 */
-	private static void useCase2() {
+	private void useCase2() {
 		System.out.println("Print the contact list");
 	}
 
@@ -111,8 +111,7 @@ public class ContactListUI {
 	 * 		the given last name, then all of the people with that last 
 	 * 		name will be displayed.
 	 */
-
-	private static void useCase3() {
+	private void useCase3() {
 		System.out.println("Get info by last name");	
 	}
 
@@ -128,7 +127,7 @@ public class ContactListUI {
 	 * 	2)	If there is more than one person in the contact list with the given email  
 	 * 		address, then all of the people with that email address will be displayed.
 	 */
-	private static void useCase4() {
+	private void useCase4() {
 		System.out.println("Get info by email address");	
 	}
 
@@ -144,7 +143,7 @@ public class ContactListUI {
 	 * 	2)	If there is more than one person in the contact list with the given 
 	 * 		zip code, then all of the people with that zip code will be displayed.
 	 */
-	private static void useCase5() {
+	private void useCase5() {
 		System.out.println("Get email by zip code");	
 	}
 }
