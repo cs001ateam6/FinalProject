@@ -37,7 +37,8 @@ public class ContactList {
 	---------------------------------------------------- */
 	
 	/**
-	 * Elena: This method will add a new Contact to the ContactList. Contact must have a last name to be added.
+	 * Elena: This method will add a new Contact to the ContactList. 
+	 * Contact must have a last name to be added.
 	 */
 	public void addContact( //Parameters on next line for clarity
 			String lastName, String firstName, String streetAddress, String emailAddress, String phoneNumber, String addedNotes
@@ -104,49 +105,3 @@ public class ContactList {
 	}
 	
 }
-
-/*--------------------- PASTE OF RUN FROM CONSOLE --------------------------
-
-You have initialized your contact list
-
-You have initialized all of this contact's variables
-Contact's last name has been set
-Contact's first name has been set
-Contact's address has been set
-Contact's email address has been set
-Contact's phone # has been set
-Contact's additional notes have been set
-Index of this contact is: 0
-Contact Details:
-Ryan Jacobson
-345 Padalecki Lane Los Altos CA 88888
-ryan345@startup.com
-6505556666
-Note: this is a sample contact
-
-You have initialized all of this contact's variables
-Contact's last name has been set
-Contact's first name has been set
-Contact's address has been set
-Contact's email address has been set
-Contact's phone # has been set
-Contact's additional notes have been set
-Index of this contact is: 1
-Contact Details:
-Matt Addison
-987 Ackles Avenue Los Altos CA 88888
-matthew_rocks@startup.com
-6509884566
-Note: this is a sample contact
-
-Your contact list has been saved to disk.
-
-This test program will now pass '1' and 'Jacobson' to searchBy()
-You have called searchBy()
-
-You have called printContactList() and your list will be printed shortly
-The contact list has been printed
-
-
-
------------------------------------------------------------------------------*/

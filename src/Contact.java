@@ -139,4 +139,5 @@ public class Contact implements Serializable {
 		System.out.println("You have called isEmailValid()");
 		return true;
 	}
+
 }
