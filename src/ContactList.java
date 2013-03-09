@@ -16,12 +16,10 @@
  *
  */
 import java.util.*;
-import java.io.Serializable;
 
-public class ContactList implements Serializable {
+public class ContactList {
 	
 	//Variables
-	private static final long serialVersionUID = 2L;
 	List<Contact> contactList = new ArrayList<Contact>();
 
 	/*----------------------------------------------------

@@ -20,7 +20,7 @@ import java.util.*;
 /**
  * Satyen: Console based use to handle all use cases
  */
-class ContactListUI {
+public class ContactListUI {
 	
 	public static void main(String[] args) {
 		

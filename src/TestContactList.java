@@ -15,6 +15,7 @@
  */
 
 public class TestContactList {
+
 	public static void main(String args[]) {
 
 		// Create a new Contact List
@@ -40,14 +41,6 @@ public class TestContactList {
 
 		// Save to disk
 		contactList.saveToDisk();
-		System.out.println();
-		
-		//Call the main menu
-		System.out.println("Here is the main menu. It will be called by the UI");
-		contactList.mainMenu();
-		
-		// Search for a contact
-		contactList.findContact();
 		System.out.println();
 		
 		// Call searchBy()
