@@ -53,7 +53,7 @@ public class ContactListUI {
 		}
 		
 		// Dump the contact list to disk
-		updateArrray();
+		writeListToFile();
 		scanner.close();
 	}
 
@@ -219,10 +219,12 @@ public class ContactListUI {
 	/**
 	 * Dump the contest to disk before exit
 	 */
-	private void updateArrray() {
-		System.out.println("Dumping array contents to disk");
+	private void writeListToFile() {
+		System.out.println("Dumping contact list to disk");
+		contactList.saveToDisk();
 		System.out.println("Done");
 	}
 
 }
+
 

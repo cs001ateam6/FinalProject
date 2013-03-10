@@ -15,24 +15,32 @@
  * and it allows you to save the Contact List to disk.
  *
  */
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 
 public class ContactList {
 	
-	//Variables
+	//class variables
 	List<Contact> contactList = new ArrayList<Contact>();
+	private final String DATA_FILE = "data.ser";
 
 	/*----------------------------------------------------
 	 * Constructor
 	----------------------------------------------------*/
+
 	/**
 	 * Default constructor
 	 */
 	public ContactList() {
-		//Initialize the arrayList size
-		//Load contacts from disk
+		// Load data from disk file
+		readFromDisk();
 	}
 		
 	/*----------------------------------------------------
@@ -40,7 +48,15 @@ public class ContactList {
 	---------------------------------------------------- */
 	
 	/**
-	 * Elena: This method will add a new Contact to the ContactList. 
+	 * This constructor will add a new Contact to the ContactList. 
+	 * Takes a contact objects as input 
+	 */
+	public void addContact(Contact contact) {
+		contactList.add(contact);
+	}
+
+	/**
+	 * This method will add a new Contact to the ContactList. 
 	 * Contact must have a last name to be added.
 	 */
 	public void addContact( //Parameters on next line for clarity
@@ -54,21 +70,70 @@ public class ContactList {
 		addedContact.setEmailAddress(emailAddress);
 		addedContact.setPhoneNumber(phoneNumber);
 		addedContact.addNotes(addedNotes);
-		// Prints index of the contact for testing purposes
-		System.out.println("Index of this contact is: " + contactList.indexOf(addedContact));
 	}
 
+	/*----------------------------------------------------
+	 * File handling Methods
+	 *--------------------------------------------------- */
+	
 	/**
-	 * Elena: This method will save the contact list as it has been entered during the
-	 * current session to disk.
+	 * This method will read contacts from disk file
 	 */
-	public void saveToDisk() {
-		System.out.println("Your contact list has been saved to disk.");
+	public void readFromDisk() {
+		//Local variables
+		FileInputStream inFile;
+		ObjectInputStream inObject;
+		
+		try {
+			inFile = new FileInputStream(DATA_FILE);
+			inObject = new ObjectInputStream(inFile);
+			Object obj = null;
+			// Read data from file
+        	//while ((contact=(Contact)inObject.readObject()) !=null){
+            
+            while ((obj = inObject.readObject()) != null) {
+				addContact((Contact)obj);
+			}
+			inFile.close();
+			inObject.close();
+        } catch (EOFException ex) { //This exception will be caught when EOF is reached
+	            // ignore the EOF error
+		} catch (IOException ioe) {
+			System.out.println("Error reading from the file: "
+					+ ioe.getMessage());
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println("Error in casting to Rectangle: " + cnfe);
+		}
 	}
 	
-	/*----------------------------------------------------
+	/**
+	 * This method will save contact list to a disk file
+	 */
+	public void saveToDisk() {
+		//Local variables
+		FileOutputStream outFile;
+		ObjectOutputStream outObject;
+		Iterator<Contact> it=contactList.iterator();
+		
+		try {
+			outFile = new FileOutputStream(DATA_FILE);
+			outObject = new ObjectOutputStream(outFile);
+			//Write object to a file 
+			while(it.hasNext())
+	        {
+	          Contact contact =it.next();
+	          outObject.writeObject(contact);
+	        }
+			outFile.close();
+			outObject.close();
+		} catch (IOException ioe) {
+			System.out.println("Error writing objects to the file: " + ioe.getMessage());
+		}
+	}
+
+	/* ----------------------------------------------------
 	 * Retrieval methods
-	----------------------------------------------------*/
+	 * ----------------------------------------------------*/
 	
 	/**
 	 * Elena: This method finds contacts by allowing a user to search by a type and a keyword.
@@ -99,7 +164,7 @@ public class ContactList {
 	}
 	
 	/**
-	 * Elena: This method will return the entire contact list as a string, sorted by last name.
+	 * This method will return the entire contact list as a string, sorted by last name.
 	 */
 	public String toString() {
 		

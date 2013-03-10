@@ -27,7 +27,7 @@ public class TestContactList {
 		contactList.addContact("Jacobson", "Ryan",
 				"345 Padalecki Lane Los Altos CA 88888", "ryan345@startup.com",
 				"6505556666", "this is a sample contact");
-		System.out.println(contactList.getByIndex(0).getContactInfo());
+		System.out.println(contactList.getByIndex(0).toString());
 		System.out.println();
 
 		// Add another contact and fetch it by its position in the contact list
@@ -36,7 +36,7 @@ public class TestContactList {
 				"matthew_rocks@startup.com", "6509884566",
 				"this is a sample contact");
 		
-		System.out.println(contactList.getByIndex(1).getContactInfo());
+		System.out.println(contactList.getByIndex(1).toString());
 		System.out.println();
 
 		// Save to disk
@@ -50,7 +50,7 @@ public class TestContactList {
 		System.out.println();
 		
 		// Print the contact list
-		System.out.println(contactList.printContactList());
+		System.out.println(contactList.toString());
 		System.out.println();	
 	}
 }

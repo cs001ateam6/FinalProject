@@ -18,24 +18,23 @@ public class TestContact {
 	public static void main(String args[]) {
 		
 		//Create new contact
-		Contact test;
-		test = new Contact();
+		Contact contact = new Contact();
 		
 		//Set values
-		test.setFirstName("John");
-		test.setLastName("Smith");
-		test.setStreetAddress("123 Jensen Avenue, Mountain View, CA 94040");
-		test.setPhoneNumber("408-454-8888");
-		test.setEmailAddress("johnsmith@startup.com");
-		test.addNotes("This is a sample contact.");
+		contact.setFirstName("John");
+		contact.setLastName("Smith");
+		contact.setStreetAddress("123 Jensen Avenue, Mountain View, CA 94040");
+		contact.setPhoneNumber("408-454-8888");
+		contact.setEmailAddress("johnsmith@startup.com");
+		contact.addNotes("This is a sample contact.");
 		
 		//Test if values are valid. These methods will actually be private to class Contact
-		test.isNameValid();
-		test.isEmailValid();
+		contact.isNameValid();
+		contact.isEmailValid();
 	
 		//Get contact's info
 		System.out.println();
-		System.out.println(test.getContactInfo());
+		System.out.println(contact.toString());
 	}
 }
 
