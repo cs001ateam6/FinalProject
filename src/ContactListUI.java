@@ -93,7 +93,7 @@ public class ContactListUI {
 		System.out.print("\nEnter contact details");
 		System.out.print("\n-------------------------------------------------");
 
-		firstName = GetFirstName();
+		firstName = getFirstName();
 		// Ensure the first name is entered
 		if (firstName.isEmpty() == false)
 		{
@@ -123,7 +123,7 @@ public class ContactListUI {
 	/**
 	 * Capture a valid first name
 	 */
-	private String GetFirstName() {
+	private String getFirstName() {
 		String enterName = "";
 		String returnName = "";
 
@@ -162,9 +162,9 @@ public class ContactListUI {
 	private void useCase2() {
 		System.out.println("");
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
-		System.out.println("List of all contacts");
+		System.out.println("\t List of all contacts");
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
-		System.out.println(contactList.printContactList());
+		System.out.println(contactList.toString());
 	}
 
 

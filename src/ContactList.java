@@ -101,7 +101,7 @@ public class ContactList {
 	/**
 	 * Elena: This method will return the entire contact list as a string, sorted by last name.
 	 */
-	public String printContactList() {
+	public String toString() {
 		
 		StringBuilder returnString = new StringBuilder();
 		Iterator<Contact> it=contactList.iterator();
