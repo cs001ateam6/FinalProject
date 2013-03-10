@@ -37,7 +37,7 @@ public class Contact implements Serializable {
 	----------------------------------------------------*/
 
 	/**
-	 * Satyen: This constructor takes all contact values
+	 * Default constructor 
 	 */
 	public Contact() {
 		firstName = " ";
@@ -49,6 +49,23 @@ public class Contact implements Serializable {
 		addedNotes = " ";
 		System.out.println("You have initialized all of this contact's variables");
 	}
+
+	/**
+	 * Constructor that takes all contact details
+	 */
+	public Contact( 
+		String firstNameP, String lastNameP, String streetAddressP, String zipCodeP, 
+		String emailAddressP, String phoneNumberP, String addedNotesP){
+		
+		firstName = firstNameP;
+		lastName = lastNameP;
+		streetAddress = streetAddressP;
+		zipCode = zipCodeP; 
+		emailAddress = emailAddressP ;
+		phoneNumber = phoneNumberP;
+		addedNotes = addedNotesP;
+	}
+	
 
 	/*----------------------------------------------------
 	 * Properties
@@ -113,10 +130,10 @@ public class Contact implements Serializable {
 	/**
 	 * Anaga: This method returns the contact and its attributes in a string
 	 */
-	public String getContactInfo() {
-		String contact_string = "Contact Details:" + "\n" + firstName + " "
-				+ lastName + "\n" + streetAddress + "\n" + emailAddress + "\n"
-				+ phoneNumber + "\n" + "Note: " + addedNotes;
+	public String toString() {
+		String contact_string = "Contact Details: " + firstName + " " + lastName + 
+				", " + streetAddress + ", " + emailAddress + ", " + phoneNumber + ", " + 
+				"Note: " + addedNotes;
 		return contact_string;
 	}
 

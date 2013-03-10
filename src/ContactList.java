@@ -15,7 +15,9 @@
  * and it allows you to save the Contact List to disk.
  *
  */
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ContactList {
 	
@@ -26,10 +28,11 @@ public class ContactList {
 	 * Constructor
 	----------------------------------------------------*/
 	/**
-	 * Anaga: This is the constructor which will initialize the size of the arrayList (contact database)
+	 * Default constructor
 	 */
 	public ContactList() {
-		System.out.println("You have initialized your contact list");
+		//Initialize the arrayList size
+		//Load contacts from disk
 	}
 		
 	/*----------------------------------------------------
@@ -99,9 +102,18 @@ public class ContactList {
 	 * Elena: This method will return the entire contact list as a string, sorted by last name.
 	 */
 	public String printContactList() {
-		System.out.println("You have called printContactList() and your list will be printed shortly");
+		
+		StringBuilder returnString = new StringBuilder();
+		Iterator<Contact> it=contactList.iterator();
+		
+		//Build a list of all contacts 
+		while(it.hasNext())
+        {
+          Contact contact =it.next();
+          returnString.append(contact.toString() + "\n");
+        }
 		//Sort the list
-		return "The contact list has been printed";
+		return returnString.toString(); 
 	}
 	
 }

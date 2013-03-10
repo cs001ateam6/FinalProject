@@ -52,8 +52,8 @@ public class ContactListUI {
 			}
 		}
 		
+		// Dump the contact list to disk
 		updateArrray();
-		
 		scanner.close();
 	}
 
@@ -98,10 +98,10 @@ public class ContactListUI {
 		if (firstName.isEmpty() == false)
 		{
 			System.out.print("-- Last name: ");
-			lastName = scanner.next();
+			lastName = scanner.nextLine();
 
 			System.out.print("-- Street address: ");
-			streetAddress = scanner.next();
+			streetAddress = scanner.nextLine();
 			
 			System.out.print("-- Zip code: ");
 			zipCode = scanner.nextLine();
@@ -160,7 +160,11 @@ public class ContactListUI {
 	 * sorted by last name.
 	 */
 	private void useCase2() {
-		System.out.println("Print the contact list");
+		System.out.println("");
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("List of all contacts");
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println(contactList.printContactList());
 	}
 
 
