@@ -22,16 +22,15 @@ import java.util.*;
  */
 public class ContactListUI {
 
-	private ContactList contactList; 
+	private ContactList contactList = new ContactList(); 
+	Scanner scanner = new Scanner(System.in);
 	
 	public void Show() {
 		
 		//Define local variable 
 		int menuSelected = 0;
-		Scanner scanner = new Scanner(System.in);
-		contactList = new ContactList();
 
-		// perform the loop based on user inputep
+		// perform the loop based on user input
 		while (menuSelected > -1 && menuSelected < 6  )
 		{
 			//Display menu 	
@@ -52,11 +51,15 @@ public class ContactListUI {
 	 					break;
 			}
 		}
+		
+		updateArrray();
+		
 		scanner.close();
 	}
 
+
 	/**
-	 * Display a menu for all use cases
+	 * Main menu 
 	 */
 	private void displayMenu() {
 		System.out.println("************************************************");
@@ -76,16 +79,78 @@ public class ContactListUI {
 	 * Enter a new person, Last name contact be blank
 	 */
 	private void useCase1() {
-		System.out.println("-------------------------------------------------");
-		System.out.println("Enter contact details");
-		System.out.println("-------------------------------------------------");
-		System.out.println("\t First mame: ");
-		System.out.println("\t Last name: ");
-		System.out.println("\t Street address: ");
-		System.out.println("\t Zip code: ");
-		System.out.println("\t Email address: ");
-		System.out.println("\t Phone number: ");
-		System.out.println("\t Added notes: ");
+		String firstName = new String();
+		String lastName = new String();
+		@SuppressWarnings("unused")
+		String zipCode = new String();
+		String streetAddress = new String();
+		String emailAddress = new String();
+		String phoneNumber = new String();
+		String addedNotes = new String();
+		
+		// Launch contact details UI
+		System.out.print("\n-------------------------------------------------");
+		System.out.print("\nEnter contact details");
+		System.out.print("\n-------------------------------------------------");
+
+		firstName = GetFirstName();
+		// Ensure the first name is entered
+		if (firstName.isEmpty() == false)
+		{
+			System.out.print("-- Last name: ");
+			lastName = scanner.next();
+
+			System.out.print("-- Street address: ");
+			streetAddress = scanner.next();
+			
+			System.out.print("-- Zip code: ");
+			zipCode = scanner.nextLine();
+
+			System.out.print("-- Email address: ");
+			emailAddress = scanner.nextLine();
+			
+			System.out.print("-- Phone number: ");
+			phoneNumber = scanner.nextLine();
+			
+			System.out.print("-- Added notes: ");
+			addedNotes = scanner.nextLine();
+			
+			// Add the new contact into contact list
+			contactList.addContact(lastName, firstName, streetAddress, emailAddress, phoneNumber, addedNotes);
+		}
+	}
+
+	/**
+	 * Capture a valid first name
+	 */
+	private String GetFirstName() {
+		String enterName = "";
+		String returnName = "";
+
+		scanner.nextLine();
+		
+		System.out.print("\n-- Enter first name or X to exit : ");
+		
+		//Ensure you capture the first name	
+		while (enterName.isEmpty() == true) {
+			
+			enterName = scanner.nextLine();
+			
+			if (enterName.isEmpty() == true)
+			{
+				System.out.print("\n-- Invalid first name (Enter X to exit) : ");
+			}
+		} 
+
+		if (enterName.endsWith("X")|| enterName.equals("x"))
+		{
+			returnName = "";
+		} else
+		{
+			returnName = enterName; 
+		}
+		
+		return returnName ;
 	}
 
 	/**
@@ -146,56 +211,14 @@ public class ContactListUI {
 	private void useCase5() {
 		System.out.println("Get email by zip code");	
 	}
+
+	/**
+	 * Dump the contest to disk before exit
+	 */
+	private void updateArrray() {
+		System.out.println("Dumping array contents to disk");
+		System.out.println("Done");
+	}
+
 }
 
-/*--------------------- PASTE OF RUN FROM CONSOLE --------------------------
-
-Main Menu:
-1. Add a new contact
-2. Print the contact list
-3. Get contact information by last name
-4. Get contact information by email address
-5. Get contact information by zip code
-Select menu: 1
-Add new contact
-Main Menu:
-1. Add a new contact
-2. Print the contact list
-3. Get contact information by last name
-4. Get contact information by email address
-5. Get contact information by zip code
-Select menu: 2
-Print the contact list
-Main Menu:
-1. Add a new contact
-2. Print the contact list
-3. Get contact information by last name
-4. Get contact information by email address
-5. Get contact information by zip code
-Select menu: 3
-Get info by last name
-Main Menu:
-1. Add a new contact
-2. Print the contact list
-3. Get contact information by last name
-4. Get contact information by email address
-5. Get contact information by zip code
-Select menu: 4
-Get info by email address
-Main Menu:
-1. Add a new contact
-2. Print the contact list
-3. Get contact information by last name
-4. Get contact information by email address
-5. Get contact information by zip code
-Select menu: 5
-Get email by zip code
-Main Menu:
-1. Add a new contact
-2. Print the contact list
-3. Get contact information by last name
-4. Get contact information by email address
-5. Get contact information by zip code
-Select menu: 
-
------------------------------------------------------------------------------*/
