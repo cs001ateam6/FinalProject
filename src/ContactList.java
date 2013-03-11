@@ -105,6 +105,7 @@ public class ContactList {
 			System.out.println("Error in casting to Rectangle: " + cnfe);
 		}
 	}
+//So since ContactList is serializable, do we still need Contact to be serializable? -Elena
 	
 	/**
 	 * This method will save contact list to a disk file

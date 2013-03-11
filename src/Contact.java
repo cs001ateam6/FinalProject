@@ -48,6 +48,8 @@ public class Contact implements Serializable {
 		addedNotes = " ";
 		System.out.println("You have initialized all of this contact's variables");
 	}
+	//So this will allow the class to be initialized either as an empty contact or a full contact. -Elena
+	//What happens if certain values are missing? -Elena
 
 	/**
 	 * Constructor that takes all contact details
@@ -64,6 +66,7 @@ public class Contact implements Serializable {
 		phoneNumber = phoneNumberP;
 		addedNotes = addedNotesP;
 	}
+	//I like the edited String names here, much clearer this way -Elena
 	
 
 	/*----------------------------------------------------
