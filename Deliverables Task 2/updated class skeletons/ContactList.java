@@ -2,7 +2,7 @@
  * Program: ContactList
  *
  * Author: Team 6
- * Written: Mar 07, 2013
+ * Written: Mar 12, 2013
  *
  * Course: CS 001A (Java) Winter 2013
  * Assignment: Final Project
@@ -27,7 +27,6 @@ import java.util.ArrayList;
 
 public class ContactList {
 	
-
 	//--------------------------  CLASS VARIABLES -------------------------- 
 
 	// Added the word private as advised by professor
@@ -43,8 +42,8 @@ public class ContactList {
 		// Load data from disk file
 		readFromDisk();
 	}
-	
-	//-------------------------- PUBLIC METHODS --------------------------- 
+		
+//-------------------------- PUBLIC METHODS --------------------------- 
 	
 	/**
 	 * This method will add a new Contact to the ContactList. 
@@ -71,36 +70,18 @@ public class ContactList {
 			//Add new contact
 			contactList.add( contactPassed );
 		}
-
-		
 	}
-	
 
 	/**
 	 * This method will save contact list to a disk file
 	 */
 	public void saveToDisk() {
-		//Local variables
-		FileOutputStream outFile;
-		ObjectOutputStream outObject;
-		Iterator<Contact> it=contactList.iterator();
-		
-		try {
-			outFile = new FileOutputStream(DATA_FILE);
-			outObject = new ObjectOutputStream(outFile);
-			//Write object to a file 
-			while(it.hasNext())
-	        {
-	          Contact contact =it.next();
-	          outObject.writeObject(contact);
-	        }
-			outFile.close();
-			outObject.close();
-		} catch (IOException ioe) {
-			System.out.println("Error writing objects to the file: " + ioe.getMessage());
-		}
+		System.out.println("Your contact list has been saved to disk.");
+		//We have code for this but it is not included in the class skeleton
 	}
 
+	//Get methods
+	
 	/**
 	 * Elena: This method finds contacts by allowing a user to search by a type and a keyword.
 	 * A user can only search by last name, e-mail address, or zip code, which is determined by an integer as follows:
@@ -146,7 +127,7 @@ public class ContactList {
 		//Sort the list
 		return returnString.toString(); 
 	}
-	
+
 	//-------------------------- PRIVATE METHODS --------------------------- 
 
 	/**
@@ -160,38 +141,19 @@ public class ContactList {
 	 * This method will read contacts from disk file
 	 */
 	private void readFromDisk() {
-		//Local variables
+		//Local Variables
 		FileInputStream inFile;
 		ObjectInputStream inObject;
-		
-		try {
-			inFile = new FileInputStream(DATA_FILE);
-			inObject = new ObjectInputStream(inFile);
-			Object obj = null;
-			// Read data from file
-        	//while ((contact=(Contact)inObject.readObject()) !=null){
-            
-            while ((obj = inObject.readObject()) != null) {
-				addContact((Contact)obj);
-			}
-			inFile.close();
-			inObject.close();
-        } catch (EOFException ex) { //This exception will be caught when EOF is reached
-	            // ignore the EOF error
-		} catch (IOException ioe) {
-			System.out.println("Error reading from the file: "
-					+ ioe.getMessage());
-		} catch (ClassNotFoundException cnfe) {
-			System.out.println("Error in casting to Rectangle: " + cnfe);
-		}
-	}
 
+		//Save file
+		//if error, print error message.
+	}
 	//So since ContactList is serializable, do we still need Contact to be serializable? -Elena
 	//We just need the Contacts class to be serialized as that class is being written to disk - Satyen
 	//Got it -Elena
 
 	/**
-	 * Checks if a contact exists using last name
+	 * Satyen: Checks if a contact exists using last name
 	 * Return either index or -1
 	 */
 	private int getIndex(String lastName) {
@@ -201,20 +163,7 @@ public class ContactList {
 		String contactLastName = new String();
 		Iterator<Contact> it=contactList.iterator();
 
-		// Iterate through the list to find the contact by last name
-		while(it.hasNext() && contactFound == false)
-        {
-          Contact contact =it.next();
-          contactLastName= contact.getLastName().toUpperCase();
-          
-          if (contactLastName.equals(lastName.toUpperCase())){
-        	  contactFound = true;
-        	  returnIndex = runningIndex; 
-          }
-          runningIndex ++;
-        }
-		
+		//Iterate through the list to find contact by last name
 		return returnIndex;
 	}
-
 }

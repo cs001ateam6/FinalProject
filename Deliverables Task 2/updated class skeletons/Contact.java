@@ -2,7 +2,7 @@
  * Program: Contact
  *
  * Author: Team 6
- * Written: Mar 05, 2013
+ * Written: Mar 12, 2013
  *
  * Course: CS 001A (Java) Winter 2013
  * Assignment: Final Project
@@ -33,8 +33,7 @@ public class Contact implements Serializable {
 	private String phoneNumber;
 	private String addedNotes;
 
-	//---------------------------- CONSTRUCTORS --------------------------- 
-
+//---------------------------- CONSTRUCTORS --------------------------- 
 	/**
 	 * Default constructor 
 	 */
@@ -69,11 +68,10 @@ public class Contact implements Serializable {
 		addedNotes = addedNotesP;
 	}
 	//I like the edited String names here, much clearer this way -Elena
-	
-	//---------------------------PUBLIC METHODS --------------------------- 
-	
-	/**
 
+//---------------------------PUBLIC METHODS --------------------------- 
+
+	/**
 	 * Elena: This method sets the contact's firstName to fName, the string
 	 * passed to this method.
 	 */
@@ -139,11 +137,10 @@ public class Contact implements Serializable {
 	/**
 	 * Anaga: This method returns the contact and its attributes in a string
 	 */
-	//Renamed this method from getContactInfo to toString as advised by professor 
 	public String toString() {
-		String contact_string = "Contact Details: " + firstName + " " + lastName + 
-				", " + streetAddress + ", " + emailAddress + ", " + phoneNumber + ", " + 
-				"Note: " + addedNotes;
+		String contact_string = "Contact Details:" + "\n" + firstName + " "
+				+ lastName + "\n" + streetAddress + "\n" + emailAddress + "\n"
+				+ phoneNumber + "\n" + "Note: " + addedNotes;
 		return contact_string;
 	}
 
@@ -152,7 +149,7 @@ public class Contact implements Serializable {
 	/**
 	 * Satyen: This method validates the contact name
 	 */
-	private boolean isNameValid() {
+	public boolean isNameValid() {
 		System.out.println("You have called isNameValid()");
 		return true;
 	}
@@ -160,9 +157,8 @@ public class Contact implements Serializable {
 	/**
 	 * Satyen: This method validates the email address
 	 */
-	private boolean isEmailValid() {
+	public boolean isEmailValid() {
 		System.out.println("You have called isEmailValid()");
 		return true;
 	}
-
 }
