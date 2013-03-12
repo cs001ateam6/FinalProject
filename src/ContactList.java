@@ -27,15 +27,14 @@ import java.util.ArrayList;
 
 public class ContactList {
 	
-	// Added the word private as advised by professor
 
-	//class variables
+	//--------------------------  CLASS VARIABLES -------------------------- 
+
+	// Added the word private as advised by professor
 	private List<Contact> contactList = new ArrayList<Contact>();
 	private final String DATA_FILE = "data.ser";
 
-	/*----------------------------------------------------
-	 * Constructor
-	----------------------------------------------------*/
+	//---------------------------- CONSTRUCTORS --------------------------- 
 
 	/**
 	 * Default constructor
@@ -44,19 +43,9 @@ public class ContactList {
 		// Load data from disk file
 		readFromDisk();
 	}
-		
-	/*----------------------------------------------------
-	 * Methods to build database array
-	---------------------------------------------------- */
 	
-	/**
-	 * This constructor will add a new Contact to the ContactList. 
-	 * Takes a contact objects as input 
-	 */
-	public void addContact(Contact contact) {
-		contactList.add(contact);
-	}
-
+	//-------------------------- PUBLIC METHODS --------------------------- 
+	
 	/**
 	 * This method will add a new Contact to the ContactList. 
 	 * Contact must have a last name to be added.
@@ -64,52 +53,29 @@ public class ContactList {
 	public void addContact( //Parameters on next line for clarity
 			String lastName, String firstName, String streetAddress, String emailAddress, String phoneNumber, String addedNotes
 	){
-		Contact addedContact = new Contact();
-		contactList.add( addedContact );
-		addedContact.setLastName(lastName);
-		addedContact.setFirstName(firstName);
-		addedContact.setStreetAddress(streetAddress);
-		addedContact.setEmailAddress(emailAddress);
-		addedContact.setPhoneNumber(phoneNumber);
-		addedContact.addNotes(addedNotes);
-	}
-
-	/*----------------------------------------------------
-	 * File handling Methods
-	 *--------------------------------------------------- */
-	
-	/**
-	 * This method will read contacts from disk file
-	 */
-	public void readFromDisk() {
-		//Local variables
-		FileInputStream inFile;
-		ObjectInputStream inObject;
+		int contactIndex;
+		Contact contactPassed = new Contact();
+		contactPassed.setLastName(lastName);
+		contactPassed.setFirstName(firstName);
+		contactPassed.setStreetAddress(streetAddress);
+		contactPassed.setEmailAddress(emailAddress);
+		contactPassed.setPhoneNumber(phoneNumber);
+		contactPassed.addNotes(addedNotes);
+		// Check if the contact already exists
+		contactIndex = getIndex(lastName);
 		
-		try {
-			inFile = new FileInputStream(DATA_FILE);
-			inObject = new ObjectInputStream(inFile);
-			Object obj = null;
-			// Read data from file
-        	//while ((contact=(Contact)inObject.readObject()) !=null){
-            
-            while ((obj = inObject.readObject()) != null) {
-				addContact((Contact)obj);
-			}
-			inFile.close();
-			inObject.close();
-        } catch (EOFException ex) { //This exception will be caught when EOF is reached
-	            // ignore the EOF error
-		} catch (IOException ioe) {
-			System.out.println("Error reading from the file: "
-					+ ioe.getMessage());
-		} catch (ClassNotFoundException cnfe) {
-			System.out.println("Error in casting to Rectangle: " + cnfe);
+		if (contactIndex >= 0){
+			//Update existing contact
+			contactList.set(contactIndex, contactPassed);
+		}else {
+			//Add new contact
+			contactList.add( contactPassed );
 		}
+
+		
 	}
-//So since ContactList is serializable, do we still need Contact to be serializable? -Elena
-//We just need the Contacts class to be serialized as that class is being written to disk - Satyen
 	
+
 	/**
 	 * This method will save contact list to a disk file
 	 */
@@ -135,10 +101,6 @@ public class ContactList {
 		}
 	}
 
-	/* ----------------------------------------------------
-	 * Retrieval methods
-	 * ----------------------------------------------------*/
-	
 	/**
 	 * Elena: This method finds contacts by allowing a user to search by a type and a keyword.
 	 * A user can only search by last name, e-mail address, or zip code, which is determined by an integer as follows:
@@ -185,4 +147,73 @@ public class ContactList {
 		return returnString.toString(); 
 	}
 	
+	//-------------------------- PRIVATE METHODS --------------------------- 
+
+	/**
+	 * Add a Contact using contact object to the ContactList. 
+	 */
+	private void addContact(Contact contact) {
+		contactList.add(contact);
+	}
+
+	/**
+	 * This method will read contacts from disk file
+	 */
+	private void readFromDisk() {
+		//Local variables
+		FileInputStream inFile;
+		ObjectInputStream inObject;
+		
+		try {
+			inFile = new FileInputStream(DATA_FILE);
+			inObject = new ObjectInputStream(inFile);
+			Object obj = null;
+			// Read data from file
+        	//while ((contact=(Contact)inObject.readObject()) !=null){
+            
+            while ((obj = inObject.readObject()) != null) {
+				addContact((Contact)obj);
+			}
+			inFile.close();
+			inObject.close();
+        } catch (EOFException ex) { //This exception will be caught when EOF is reached
+	            // ignore the EOF error
+		} catch (IOException ioe) {
+			System.out.println("Error reading from the file: "
+					+ ioe.getMessage());
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println("Error in casting to Rectangle: " + cnfe);
+		}
+	}
+
+	//So since ContactList is serializable, do we still need Contact to be serializable? -Elena
+	//We just need the Contacts class to be serialized as that class is being written to disk - Satyen
+
+	/**
+	 * Checks if a contact exists using last name
+	 * Return either index or -1
+	 */
+	private int getIndex(String lastName) {
+		int returnIndex = -1;
+		int runningIndex = 0;
+		boolean contactFound = false;
+		String contactLastName = new String();
+		Iterator<Contact> it=contactList.iterator();
+
+		// Iterate through the list to find the contact by last name
+		while(it.hasNext() && contactFound == false)
+        {
+          Contact contact =it.next();
+          contactLastName= contact.getLastName().toUpperCase();
+          
+          if (contactLastName.equals(lastName.toUpperCase())){
+        	  contactFound = true;
+        	  returnIndex = runningIndex; 
+          }
+          runningIndex ++;
+        }
+		
+		return returnIndex;
+	}
+
 }

@@ -29,8 +29,9 @@ public class TestContact {
 		contact.addNotes("This is a sample contact.");
 		
 		//Test if values are valid. These methods will actually be private to class Contact
-		contact.isNameValid();
-		contact.isEmailValid();
+		// Satyen: This methods should be private and hence we need not test them
+		//contact.isNameValid();
+		//contact.isEmailValid();
 	
 		//Get contact's info
 		System.out.println();

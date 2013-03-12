@@ -93,12 +93,13 @@ public class ContactListUI {
 		System.out.print("\nEnter contact details");
 		System.out.print("\n-------------------------------------------------");
 
-		firstName = getFirstName();
+		lastName = getLastName();
+		
 		// Ensure the first name is entered
-		if (firstName.isEmpty() == false)
+		if (lastName.isEmpty() == false)
 		{
-			System.out.print("-- Last name: ");
-			lastName = scanner.nextLine();
+			System.out.print("-- First name: ");
+			firstName = scanner.nextLine();
 
 			System.out.print("-- Street address: ");
 			streetAddress = scanner.nextLine();
@@ -121,24 +122,24 @@ public class ContactListUI {
 	}
 
 	/**
-	 * Capture a valid first name
+	 * Capture a valid last name
 	 */
-	private String getFirstName() {
+	private String getLastName() {
 		String enterName = "";
 		String returnName = "";
 
 		scanner.nextLine();
 		
-		System.out.print("\n-- Enter first name or X to exit : ");
+		System.out.print("\n-- Enter last name or X to exit : ");
 		
-		//Ensure you capture the first name	
+		//Ensure you capture the last name	
 		while (enterName.isEmpty() == true) {
 			
 			enterName = scanner.nextLine();
 			
 			if (enterName.isEmpty() == true)
 			{
-				System.out.print("\n-- Invalid first name (Enter X to exit) : ");
+				System.out.print("\n-- Invalid last name (Enter X to exit) : ");
 			}
 		} 
 

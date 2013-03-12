@@ -23,6 +23,8 @@ import java.io.Serializable;
 
 public class Contact implements Serializable {
 
+	//--------------------------  CLASS VARIABLES -------------------------- 
+
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
@@ -31,9 +33,7 @@ public class Contact implements Serializable {
 	private String phoneNumber;
 	private String addedNotes;
 
-	/*----------------------------------------------------
-	 * Constructors
-	----------------------------------------------------*/
+	//---------------------------- CONSTRUCTORS --------------------------- 
 
 	/**
 	 * Default constructor 
@@ -69,12 +69,10 @@ public class Contact implements Serializable {
 	}
 	//I like the edited String names here, much clearer this way -Elena
 	
-
-	/*----------------------------------------------------
-	 * Properties
-	----------------------------------------------------*/
-
+	//---------------------------PUBLIC METHODS --------------------------- 
+	
 	/**
+
 	 * Elena: This method sets the contact's firstName to fName, the string
 	 * passed to this method.
 	 */
@@ -90,6 +88,13 @@ public class Contact implements Serializable {
 	public void setLastName(String lName) {
 		lastName = lName;
 		System.out.println("Contact's last name has been set");
+	}
+
+	/**
+	 * Satyen: This method gets the contact's lastName 
+	 */
+	public String getLastName() {
+		return lastName;
 	}
 
 	/**
@@ -141,14 +146,12 @@ public class Contact implements Serializable {
 		return contact_string;
 	}
 
-	/*----------------------------------------------------
-	 * Validation methods: these will be PRIVATE and be called when calling set methods
-	----------------------------------------------------*/
+	//------------------------ PRIVATE METHODS --------------------------- 
 
 	/**
 	 * Satyen: This method validates the contact name
 	 */
-	public boolean isNameValid() {
+	private boolean isNameValid() {
 		System.out.println("You have called isNameValid()");
 		return true;
 	}
@@ -156,7 +159,7 @@ public class Contact implements Serializable {
 	/**
 	 * Satyen: This method validates the email address
 	 */
-	public boolean isEmailValid() {
+	private boolean isEmailValid() {
 		System.out.println("You have called isEmailValid()");
 		return true;
 	}
