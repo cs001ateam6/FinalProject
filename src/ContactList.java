@@ -27,8 +27,10 @@ import java.util.ArrayList;
 
 public class ContactList {
 	
+	// Added the word private as advised by professor
+
 	//class variables
-	List<Contact> contactList = new ArrayList<Contact>();
+	private List<Contact> contactList = new ArrayList<Contact>();
 	private final String DATA_FILE = "data.ser";
 
 	/*----------------------------------------------------
@@ -106,7 +108,7 @@ public class ContactList {
 		}
 	}
 //So since ContactList is serializable, do we still need Contact to be serializable? -Elena
-// We just need the Contacts to be serialized as that class is being written - Satyen	
+//We just need the Contacts class to be serialized as that class is being written to disk - Satyen
 	
 	/**
 	 * This method will save contact list to a disk file

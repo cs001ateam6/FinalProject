@@ -23,7 +23,7 @@ import java.util.*;
 public class ContactListUI {
 
 	private ContactList contactList = new ContactList(); 
-	Scanner scanner = new Scanner(System.in);
+	private Scanner scanner = new Scanner(System.in);
 	
 	public void Show() {
 		

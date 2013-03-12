@@ -133,6 +133,7 @@ public class Contact implements Serializable {
 	/**
 	 * Anaga: This method returns the contact and its attributes in a string
 	 */
+	//Renamed this method from getContactInfo to toString as advised by professor 
 	public String toString() {
 		String contact_string = "Contact Details: " + firstName + " " + lastName + 
 				", " + streetAddress + ", " + emailAddress + ", " + phoneNumber + ", " + 
