@@ -106,6 +106,7 @@ public class ContactList {
 		}
 	}
 //So since ContactList is serializable, do we still need Contact to be serializable? -Elena
+// We just need the Contacts to be serialized as that class is being written - Satyen	
 	
 	/**
 	 * This method will save contact list to a disk file

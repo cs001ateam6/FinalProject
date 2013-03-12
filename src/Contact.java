@@ -50,6 +50,7 @@ public class Contact implements Serializable {
 	}
 	//So this will allow the class to be initialized either as an empty contact or a full contact. -Elena
 	//What happens if certain values are missing? -Elena
+	//Just pass the ones you have and the rest can be blank - Satyen
 
 	/**
 	 * Constructor that takes all contact details
