@@ -30,6 +30,7 @@ public class ContactList {
 
 	//--------------------------  CLASS VARIABLES -------------------------- 
 
+	// Added the word private as advised by professor
 	private List<Contact> contactList = new ArrayList<Contact>();
 	private final String DATA_FILE = "data.ser";
 
@@ -153,6 +154,7 @@ public class ContactList {
 	 * It returns that contact (an object of class Contact)
 	 * If there is no match, nothing is returned.
 	 */
+	//Satyen: Every method should have only one exit and we have two return her
 	public Contact searchByLastName(String lastName) {
 		
 	for(int i = 0; i < contactList.size(); i++) {
@@ -169,6 +171,7 @@ public class ContactList {
 	 * It returns that contact (an object of class Contact).
 	 * If there is no match, nothing is returned.
 	 */
+	//Satyen: Every method should have only one exit and we have two return her
 	public Contact searchByEmail(String emailAddress) {
 		
 		 for(int i = 0; i < contactList.size(); i++) {
@@ -185,7 +188,7 @@ public class ContactList {
 	 * If the zip code matches a contact's zip code, the method returns the contact
 	 * If there is no match, nothing is returned
 	 */
-
+	//Satyen: Every method should have only one exit and we have two return her
 	public Contact searchByZipCode(String zipCode) {	
 		for(int i = 0; i < contactList.size(); i++) {
 			Contact contact = (Contact) getByIndex(i);

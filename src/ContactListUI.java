@@ -64,15 +64,19 @@ public class ContactListUI {
 	private void displayMenu() {
 		System.out.println("************************************************");
 		System.out.println("Main Menu:");
+		System.out.println("************************************************");
 		System.out.println("1. Add a new contact");
 		System.out.println("2. Print the contact list");
 		System.out.println("3. Get contact information by last name");
 		System.out.println("4. Get contact information by email address");
 		System.out.println("5. Get contact information by zip code");
+		System.out.println("6. Exit");
 		System.out.println("************************************************");
 		System.out.print("Select menu: ");
 		
 		//It would be really nice if information was displayed before this menu. So maybe a prompt like "type main to access main menu" -Elena
+		//Satyen: Good catch, I have added the Exit option to  
+		//        simulate the behavior of application main window
 	}
 
 	/**
@@ -189,6 +193,7 @@ public class ContactListUI {
 		Contact contact = (Contact) contactList.searchByLastName(input_name);
 			
 		 if (contact != null )	{
+		 	//Satyen: Consider using the toString method
 			System.out.println("Contact Details");
 			System.out.println("First Name = " + contact.getFirstName());
 			System.out.println("Last Name = " + contact.getLastName());
@@ -217,19 +222,21 @@ public class ContactListUI {
 		System.out.print("\n Please Enter the email address of the contact : ");
 		input_name = scanner.nextLine();
 		Contact contact = (Contact) contactList.searchByEmail(input_name);
-			if (contact != null )	{
-				System.out.println("Contact Details");
-				System.out.println("First Name = " + contact.getFirstName());
-				System.out.println("Last Name = " + contact.getLastName());
-				System.out.println("Address = " + contact.getStreetAddress());
-				System.out.println("Email address = " + contact.getEmailAddress());
-				System.out.println("Phone Number = " + contact.getPhoneNumber());
-				System.out.println("Notes = " + contact.getAddedNotes());
-			}	
-	 		else	{
-				System.out.println("No contact found");
+		if (contact != null )	{
+		 	//Satyen: Consider using the toString method
+			System.out.println("Contact Details");
+			System.out.println("First Name = " + contact.getFirstName());
+			System.out.println("Last Name = " + contact.getLastName());
+			System.out.println("Address = " + contact.getStreetAddress());
+			System.out.println("Email address = " + contact.getEmailAddress());
+			System.out.println("Phone Number = " + contact.getPhoneNumber());
+			System.out.println("Notes = " + contact.getAddedNotes());
+		} else	{
+			System.out.println("No contact found");
 	 	}
-			//This method only returns one contact. Use Case 5 says that if there is more than one contact with the same zip, it returns all of them
+		//Elena: This method only returns one contact. Use Case 5 says that if there is more than one contact with the same zip, it returns all of them
+		//Satyen: Great catch Elena
+		//Satyen: Also we should allow partial search (Ex. raj should return your contact) 
 	}
 
 	/**
@@ -251,6 +258,7 @@ public class ContactListUI {
 		Contact contact = (Contact) contactList.searchByZipCode(input_name);
 		
 		if (contact != null )	{
+		 	//Satyen: Consider using the toString method
 			System.out.println("Contact Details");
 			System.out.println("First Name = " + contact.getFirstName());
 			System.out.println("Last Name = " + contact.getLastName());
@@ -258,8 +266,7 @@ public class ContactListUI {
 			System.out.println("Email address = " + contact.getEmailAddress());
 			System.out.println("Phone Number = " + contact.getPhoneNumber());
 			System.out.println("Notes = " + contact.getAddedNotes());
-		}	
-		else{
+		} else{
 			System.out.println("No contact found");
 		}
 	}
