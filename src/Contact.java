@@ -48,10 +48,6 @@ public class Contact implements Serializable {
 		addedNotes = " ";
 		System.out.println("You have initialized all of this contact's variables");
 	}
-	//So this will allow the class to be initialized either as an empty contact or a full contact. -Elena
-	//What happens if certain values are missing? -Elena
-	//Just pass the ones you have and the rest can be blank - Satyen
-	//Thanks, I've tested this and it does work -Elena
 
 	/**
 	 * Constructor that takes all contact details
@@ -68,18 +64,23 @@ public class Contact implements Serializable {
 		phoneNumber = phoneNumberP;
 		addedNotes = addedNotesP;
 	}
-	//I like the edited String names here, much clearer this way -Elena
 	
 	//---------------------------PUBLIC METHODS --------------------------- 
 	
 	/**
-
 	 * Elena: This method sets the contact's firstName to fName, the string
 	 * passed to this method.
 	 */
 	public void setFirstName(String fName) {
 		firstName = fName;
 		System.out.println("Contact's first name has been set");
+	}
+
+	/**
+	 * Anaga: This method gets a contact's first name and returns it as a String.
+	 */
+	public String getFirstName() {
+		return firstName;
 	}
 
 	/**
@@ -110,12 +111,40 @@ public class Contact implements Serializable {
 	}
 
 	/**
+	 * Elena: this method returns the contact's Street Address as a String
+	 */
+	public String getStreetAddress () {
+		return streetAddress;
+	}
+
+	/**
+	 *Anaga: This method sets the zip code.
+	 */
+	public void setZipCode(String zpCode) {
+		zipCode = zpCode;
+	}
+
+	/**
+	 *Anaga: This method gets the zip code and returns it as a String.
+	 */
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	/**
 	 * Elena: This method sets the contact's emailAddress to eAddress, the
 	 * string passed to this method.
 	 */
 	public void setEmailAddress(String eAddress) {
 		emailAddress = eAddress;
 		System.out.println("Contact's email address has been set");
+	}
+
+	/**
+	 * This method returns a contact's email address as a String
+	 */
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 
 	/**
@@ -128,6 +157,13 @@ public class Contact implements Serializable {
 	}
 
 	/**
+	 *Anaga: this method returns a contact's phone number as a String
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
 	 * Elena: This method lets the user add notes to the contact by setting
 	 * addedNotes to the string notes, passed to this method.
 	 */
@@ -137,12 +173,19 @@ public class Contact implements Serializable {
 	}
 
 	/**
+	 *Anaga: this method gets a Contact's Notes and returns them as a String.
+	 */
+	public String getAddedNotes() {
+		return addedNotes;
+	}
+
+	/**
 	 * Anaga: This method returns the contact and its attributes in a string
 	 */
 	//Renamed this method from getContactInfo to toString as advised by professor 
 	public String toString() {
 		String contact_string = "Contact Details: " + firstName + " " + lastName + 
-				", " + streetAddress + ", " + emailAddress + ", " + phoneNumber + ", " + 
+				", " + streetAddress + ", " + zipCode + ", " + emailAddress + ", " + phoneNumber + ", " + 
 				"Note: " + addedNotes;
 		return contact_string;
 	}

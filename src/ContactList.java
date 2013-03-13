@@ -30,7 +30,6 @@ public class ContactList {
 
 	//--------------------------  CLASS VARIABLES -------------------------- 
 
-	// Added the word private as advised by professor
 	private List<Contact> contactList = new ArrayList<Contact>();
 	private final String DATA_FILE = "data.ser";
 
@@ -51,18 +50,22 @@ public class ContactList {
 	 * Contact must have a last name to be added.
 	 */
 	public void addContact( //Parameters on next line for clarity
-			String lastName, String firstName, String streetAddress, String emailAddress, String phoneNumber, String addedNotes
+			String lastName, String firstName, String streetAddress, String zipCode, String emailAddress, String phoneNumber, String addedNotes
 	){
 		int contactIndex;
 		Contact contactPassed = new Contact();
 		contactPassed.setLastName(lastName);
 		contactPassed.setFirstName(firstName);
 		contactPassed.setStreetAddress(streetAddress);
+		contactPassed.setZipCode(zipCode);
 		contactPassed.setEmailAddress(emailAddress);
 		contactPassed.setPhoneNumber(phoneNumber);
 		contactPassed.addNotes(addedNotes);
 		// Check if the contact already exists
 		contactIndex = getIndex(lastName);
+		
+		// The way this is designed right now, I cannot add multiple contacts with the same last name. -Elena
+		// The first one gets replaced by the second
 		
 		if (contactIndex >= 0){
 			//Update existing contact
@@ -70,9 +73,7 @@ public class ContactList {
 		}else {
 			//Add new contact
 			contactList.add( contactPassed );
-		}
-
-		
+		}	
 	}
 	
 
@@ -146,6 +147,56 @@ public class ContactList {
 		//Sort the list
 		return returnString.toString(); 
 	}
+
+	/**
+	 * Anaga: This method searches for a contact by last name. 
+	 * It returns that contact (an object of class Contact)
+	 * If there is no match, nothing is returned.
+	 */
+	public Contact searchByLastName(String lastName) {
+		
+	for(int i = 0; i < contactList.size(); i++) {
+		Contact contact = (Contact) getByIndex(i);
+		if (lastName.equalsIgnoreCase(contact.getLastName()) )	{
+			return contact;
+		}
+	}
+	return null;
+}
+
+	/**
+	 * Anaga: This method searches for a contact by email address. 
+	 * It returns that contact (an object of class Contact).
+	 * If there is no match, nothing is returned.
+	 */
+	public Contact searchByEmail(String emailAddress) {
+		
+		 for(int i = 0; i < contactList.size(); i++) {
+			 Contact contact = (Contact) getByIndex(i);
+			  if (emailAddress.equalsIgnoreCase(contact.getEmailAddress())) 	{
+				  return contact;
+			  }
+		 }
+		 return null;
+	}
+
+	/**
+	 * Anaga: this method will try to match the inserted zip code to a contact
+	 * If the zip code matches a contact's zip code, the method returns the contact
+	 * If there is no match, nothing is returned
+	 */
+
+	public Contact searchByZipCode(String zipCode) {	
+		for(int i = 0; i < contactList.size(); i++) {
+			Contact contact = (Contact) getByIndex(i);
+			if (zipCode.equalsIgnoreCase(contact.getZipCode())) {
+				return contact;
+			}
+		}
+	 	return null;
+	}
+
+
 	
 	//-------------------------- PRIVATE METHODS --------------------------- 
 

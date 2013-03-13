@@ -64,7 +64,6 @@ public class ContactListUI {
 	private void displayMenu() {
 		System.out.println("************************************************");
 		System.out.println("Main Menu:");
-		System.out.println("************************************************");
 		System.out.println("1. Add a new contact");
 		System.out.println("2. Print the contact list");
 		System.out.println("3. Get contact information by last name");
@@ -72,6 +71,8 @@ public class ContactListUI {
 		System.out.println("5. Get contact information by zip code");
 		System.out.println("************************************************");
 		System.out.print("Select menu: ");
+		
+		//It would be really nice if information was displayed before this menu. So maybe a prompt like "type main to access main menu" -Elena
 	}
 
 	/**
@@ -79,6 +80,7 @@ public class ContactListUI {
 	 * Enter a new person, Last name contact be blank
 	 */
 	private void useCase1() {
+		//This needs a better method name -Elena
 		String firstName = new String();
 		String lastName = new String();
 		@SuppressWarnings("unused")
@@ -117,7 +119,7 @@ public class ContactListUI {
 			addedNotes = scanner.nextLine();
 			
 			// Add the new contact into contact list
-			contactList.addContact(lastName, firstName, streetAddress, emailAddress, phoneNumber, addedNotes);
+			contactList.addContact(lastName, firstName, streetAddress, zipCode, emailAddress, phoneNumber, addedNotes);
 		}
 	}
 
@@ -161,6 +163,7 @@ public class ContactListUI {
 	 * sorted by last name.
 	 */
 	private void useCase2() {
+		//This needs a better method name -Elena
 		System.out.println("");
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("\t List of all contacts");
@@ -170,52 +173,97 @@ public class ContactListUI {
 
 
 	/**
+	 * Anaga: 
 	 * Use case 3: 
-	 * Retrieve a person's information by last name
-	 * The user enters a last name, and the system displays all of 
-	 * the information that was previously entered on that person.
-	 * 1)	If there is no one in the contact list with the given 
-	 * 		last name, the system will display a message to the 
-	 * 		user telling her that.
-	 * 2)	If there is more than one person in the contact list with 
-	 * 		the given last name, then all of the people with that last 
-	 * 		name will be displayed.
+	 * This method searches for then returns the contact details for a person with the entered last name
+	 * If last name doesn't match a contact, a message will indicate this
+	 * If there are multiple contacts with the last name, all of them will be listed
 	 */
 	private void useCase3() {
-		System.out.println("Get info by last name");	
+		//This needs a better method name -Elena
+		String input_name;
+		scanner.nextLine();
+		System.out.print("-------------------------------------------------");
+		System.out.print(" \n Please Enter the last name of the contact : ");
+		input_name = scanner.nextLine();
+		Contact contact = (Contact) contactList.searchByLastName(input_name);
+			
+		 if (contact != null )	{
+			System.out.println("Contact Details");
+			System.out.println("First Name = " + contact.getFirstName());
+			System.out.println("Last Name = " + contact.getLastName());
+			System.out.println("Address = " + contact.getStreetAddress());
+			System.out.println("Email address = " + contact.getEmailAddress());
+			System.out.println("Phone Number = " + contact.getPhoneNumber());
+			System.out.println("Notes = " + contact.getAddedNotes());
+		 }	else	{
+			 System.out.println("No contact found");
+		 }
 	}
 
+
 	/**
+	 * Anaga: 
 	 * Use case 4: 
-	 * Retrieve a person's information by email address
-	 * The user has chosen to retrieve a person's information from the 
-	 * contact list by email address. The user enters an email address, 
-	 * and the system displays all of the information that was previously 
-	 * entered on the person with that email address.
-	 * 	1)	If there is no one in the contact list with the given email address, 
-	 * 		the system will display a message to the user telling her that.
-	 * 	2)	If there is more than one person in the contact list with the given email  
-	 * 		address, then all of the people with that email address will be displayed.
+	 * This method searches for then returns the contact details for a person with the entered email address
+	 * If the email doesn't match a that of any contact, a message will indicate this
+	 * If there are multiple contacts with the email, all of them will be listed
 	 */
 	private void useCase4() {
-		System.out.println("Get info by email address");	
+		//This needs a better method name -Elena
+		String input_name;
+		scanner.nextLine();
+		System.out.print("-------------------------------------------------");
+		System.out.print("\n Please Enter the email address of the contact : ");
+		input_name = scanner.nextLine();
+		Contact contact = (Contact) contactList.searchByEmail(input_name);
+			if (contact != null )	{
+				System.out.println("Contact Details");
+				System.out.println("First Name = " + contact.getFirstName());
+				System.out.println("Last Name = " + contact.getLastName());
+				System.out.println("Address = " + contact.getStreetAddress());
+				System.out.println("Email address = " + contact.getEmailAddress());
+				System.out.println("Phone Number = " + contact.getPhoneNumber());
+				System.out.println("Notes = " + contact.getAddedNotes());
+			}	
+	 		else	{
+				System.out.println("No contact found");
+	 	}
+			//This method only returns one contact. Use Case 5 says that if there is more than one contact with the same zip, it returns all of them
 	}
 
 	/**
+	 * Anaga: 
 	 * Use case 5: 
-	 * Retrieve all people who live in a given zip code
-	 * The user has chosen to retrieve all people from the contact 
-	 * list who live in a given zip code. The user enters a zip code, 
-	 * and the system displays all of the information on anyone in the 
-	 * contact list with that zip code.
-	 * 	1)	If there is no one in the contact list with the given zip code, 
-	 * 		the system will display a message to the user telling her that.
-	 * 	2)	If there is more than one person in the contact list with the given 
-	 * 		zip code, then all of the people with that zip code will be displayed.
+	 * This method searches for then returns the contact details for a person with the entered zip code address
+	 * If the zip code doesn't match a that of any contact, a message will indicate this
+	 * If there are multiple contacts with the zip code, all of them will be listed
 	 */
 	private void useCase5() {
-		System.out.println("Get email by zip code");	
+		
+		//This method should have a different, more descriptive name than "useCase5()" - Elena
+		
+		String input_name;
+		scanner.nextLine();
+		System.out.println("-------------------------------------------------");
+		System.out.print("\n Please Enter the Zip Code of the contact : ");
+		input_name = scanner.nextLine();
+		Contact contact = (Contact) contactList.searchByZipCode(input_name);
+		
+		if (contact != null )	{
+			System.out.println("Contact Details");
+			System.out.println("First Name = " + contact.getFirstName());
+			System.out.println("Last Name = " + contact.getLastName());
+			System.out.println("Address = " + contact.getStreetAddress());
+			System.out.println("Email address = " + contact.getEmailAddress());
+			System.out.println("Phone Number = " + contact.getPhoneNumber());
+			System.out.println("Notes = " + contact.getAddedNotes());
+		}	
+		else{
+			System.out.println("No contact found");
+		}
 	}
+
 
 	/**
 	 * Dump the contest to disk before exit
@@ -225,6 +273,7 @@ public class ContactListUI {
 		contactList.saveToDisk();
 		System.out.println("Done");
 	}
+	//I have deleted a duplicate of this method -Elena
 
 }
 
