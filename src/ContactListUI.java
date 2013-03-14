@@ -87,7 +87,6 @@ public class ContactListUI {
 		//This needs a better method name -Elena
 		String firstName = new String();
 		String lastName = new String();
-		@SuppressWarnings("unused")
 		String zipCode = new String();
 		String streetAddress = new String();
 		String emailAddress = new String();

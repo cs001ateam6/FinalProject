@@ -25,6 +25,7 @@ public class Contact implements Serializable {
 
 	//--------------------------  CLASS VARIABLES -------------------------- 
 
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 	private String streetAddress;
