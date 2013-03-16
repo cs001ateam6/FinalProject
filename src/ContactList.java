@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class ContactList {
 	
 
-	//--------------------------  CLASS VARIABLES -------------------------- 
+	//--------------------------  INSTANCE VARIABLES -------------------------- 
 
 	// Added the word private as advised by professor
 	private List<Contact> contactList = new ArrayList<Contact>();
@@ -127,7 +127,7 @@ public class ContactList {
 	 * It takes an int index and returns an object of class Contact, to which you can then pass methods.
 	 * This is useful for loops.
 	 */
-	public Contact getByIndex(int index){
+	private Contact getByIndex(int index){
 		return contactList.get(index);
 	}
 	
@@ -154,7 +154,7 @@ public class ContactList {
 	 * It returns that contact (an object of class Contact)
 	 * If there is no match, nothing is returned.
 	 */
-	//Satyen: Every method should have only one exit and we have two return her
+	//Satyen: Every method should have only one exit and we have two returns her
 	public Contact searchByLastName(String lastName) {
 		
 	for(int i = 0; i < contactList.size(); i++) {
