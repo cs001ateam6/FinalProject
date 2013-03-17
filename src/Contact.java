@@ -177,10 +177,12 @@ public class Contact implements Serializable {
 	 */
 	//Renamed this method from getContactInfo to toString as advised by professor 
 	public String toString() {
-		String contact_string = "Contact Details: " + lastName + ", " + firstName + 
-				", " + streetAddress + ", " + zipCode + ", " + emailAddress + ", " + phoneNumber + ", " + 
-				"Note: " + addedNotes;
-		return contact_string;
+		String returnString = String.format(
+				"%1$-25s|%2$s",
+				lastName.trim() + ", " + firstName.trim(),
+				streetAddress + ", " + zipCode + ", " + emailAddress + 
+				", " + phoneNumber + ", " + "Note: " + addedNotes);
+		return returnString;
 	}
 	
 

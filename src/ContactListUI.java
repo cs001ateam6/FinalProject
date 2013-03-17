@@ -26,7 +26,8 @@ public class ContactListUI {
 	
 	private ContactList contactList = new ContactList(); 
 	private Scanner scanner = new Scanner(System.in);
-	
+	// As advised by John
+	private Boolean dataChanged = false;
 	
 	//-------------------------- PUBLIC METHODS -------------------------------
 	public void Show() {
@@ -57,8 +58,11 @@ public class ContactListUI {
 		}
 		
 		// Dump the contact list to disk
-		writeListToFile();
+		if (dataChanged == true){
+			writeListToFile();
+		}
 		scanner.close();
+		System.out.println("Thank you");
 	}
 
 	
@@ -128,6 +132,9 @@ public class ContactListUI {
 			
 			// Add the new contact into contact list
 			contactList.addContact(lastName, firstName, streetAddress, zipCode, emailAddress, phoneNumber, addedNotes);
+			// Set the data changed flag to true
+			dataChanged = true;
+
 		}
 	}
 
@@ -188,25 +195,13 @@ public class ContactListUI {
 	 */
 	private void useCase3() {
 		//This needs a better method name -Elena
+		//Satyen: Changed this method to handle multiple contacts with same last name
 		String input_name;
 		scanner.nextLine();
 		System.out.print("-------------------------------------------------");
 		System.out.print(" \n Please Enter the last name of the contact : ");
 		input_name = scanner.nextLine();
-		Contact contact = (Contact) contactList.searchByLastName(input_name);
-			
-		 if (contact != null )	{
-		 	//Satyen: Consider using the toString method
-			System.out.println("Contact Details");
-			System.out.println("First Name = " + contact.getFirstName());
-			System.out.println("Last Name = " + contact.getLastName());
-			System.out.println("Address = " + contact.getStreetAddress());
-			System.out.println("Email address = " + contact.getEmailAddress());
-			System.out.println("Phone Number = " + contact.getPhoneNumber());
-			System.out.println("Notes = " + contact.getAddedNotes());
-		 }	else	{
-			 System.out.println("No contact found");
-		 }
+		System.out.println(contactList.searchContacts(1, input_name));
 	}
 
 	/**
@@ -218,24 +213,14 @@ public class ContactListUI {
 	 */
 	private void useCase4() {
 		//This needs a better method name -Elena
-		String input_name;
+		//Satyen: Changed this method to return multiple contacts
+
+		String emailAddress;
 		scanner.nextLine();
 		System.out.print("-------------------------------------------------");
 		System.out.print("\n Please Enter the email address of the contact : ");
-		input_name = scanner.nextLine();
-		Contact contact = (Contact) contactList.searchByEmail(input_name);
-		if (contact != null )	{
-		 	//Satyen: Consider using the toString method
-			System.out.println("Contact Details");
-			System.out.println("First Name = " + contact.getFirstName());
-			System.out.println("Last Name = " + contact.getLastName());
-			System.out.println("Address = " + contact.getStreetAddress());
-			System.out.println("Email address = " + contact.getEmailAddress());
-			System.out.println("Phone Number = " + contact.getPhoneNumber());
-			System.out.println("Notes = " + contact.getAddedNotes());
-		} else	{
-			System.out.println("No contact found");
-	 	}
+		emailAddress = scanner.nextLine();
+		System.out.println(contactList.searchContacts(2, emailAddress));
 		//Elena: This method only returns one contact. Use Case 5 says that if there is more than one contact with the same zip, it returns all of them
 		//Satyen: Great catch Elena
 		//Satyen: Also we should allow partial search (Ex. raj should return your contact) 
@@ -249,35 +234,21 @@ public class ContactListUI {
 	 * If there are multiple contacts with the zip code, all of them will be listed
 	 */
 	private void useCase5() {
-		
 		//This method should have a different, more descriptive name than "useCase5()" - Elena
-		
-		String input_name;
+		//Satyen: Changed this method to return multiple contacts
+		String zipCode;
 		scanner.nextLine();
 		System.out.println("-------------------------------------------------");
 		System.out.print("\n Please Enter the Zip Code of the contact : ");
-		input_name = scanner.nextLine();
-		Contact contact = (Contact) contactList.searchByZipCode(input_name);
-		
-		if (contact != null )	{
-		 	//Satyen: Consider using the toString method
-			System.out.println("Contact Details");
-			System.out.println("First Name = " + contact.getFirstName());
-			System.out.println("Last Name = " + contact.getLastName());
-			System.out.println("Address = " + contact.getStreetAddress());
-			System.out.println("Email address = " + contact.getEmailAddress());
-			System.out.println("Phone Number = " + contact.getPhoneNumber());
-			System.out.println("Notes = " + contact.getAddedNotes());
-		} else{
-			System.out.println("No contact found");
-		}
+		zipCode = scanner.nextLine();
+		System.out.println(contactList.searchContacts(3, zipCode));
 	}
 
 	/**
 	 * Dump the contest to disk before exit
 	 */
 	private void writeListToFile() {
-		System.out.println("Dumping contact list to disk");
+		System.out.println("Updating contact to disk file");
 		contactList.saveToDisk();
 		System.out.println("Done");
 	}

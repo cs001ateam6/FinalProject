@@ -138,7 +138,7 @@ public class ContactList {
 	 * It takes an int index and returns an object of class Contact, to which you can then pass methods.
 	 * This is useful for loops.
 	 */
-	private Contact getByIndex(int index){
+	public Contact getByIndex(int index){
 		return contactList.get(index);
 	}
 	
@@ -167,55 +167,50 @@ public class ContactList {
 	}
 
 	/**
-	 * Anaga: This method searches for a contact by last name. 
-	 * It returns that contact (an object of class Contact)
-	 * If there is no match, nothing is returned.
+	 * Anaga: This method searches contact by a given type. 
+	 * It returns contact string
+	 * Type: 1 = Last name
+	 * 		 2 = email address
+	 * 		 3 = zip code
 	 */
-	//Satyen: Every method should have only one exit and we have two returns her
-	public Contact searchByLastName(String lastName) {
-		
-	for(int i = 0; i < contactList.size(); i++) {
-		Contact contact = (Contact) getByIndex(i);
-		if (lastName.equalsIgnoreCase(contact.getLastName()) )	{
-			return contact;
-		}
-	}
-	return null;
-}
+	public String searchContacts(Integer type,  String searchStringPassed) {
+		//Satyen: Every method should have only one exit and we have two returns her
+		Boolean contactFound = false; 
+		StringBuilder returnString = new StringBuilder();
+		Contact contact;
+		String searchString = "";
+		String messageString = "";
 
-	/**
-	 * Anaga: This method searches for a contact by email address. 
-	 * It returns that contact (an object of class Contact).
-	 * If there is no match, nothing is returned.
-	 */
-	//Satyen: Every method should have only one exit and we have two return her
-	public Contact searchByEmail(String emailAddress) {
-		
-		 for(int i = 0; i < contactList.size(); i++) {
-			 Contact contact = (Contact) getByIndex(i);
-			  if (emailAddress.equalsIgnoreCase(contact.getEmailAddress())) 	{
-				  return contact;
-			  }
-		 }
-		 return null;
-	}
-
-	/**
-	 * Anaga: this method will try to match the inserted zip code to a contact
-	 * If the zip code matches a contact's zip code, the method returns the contact
-	 * If there is no match, nothing is returned
-	 */
-	//Satyen: Every method should have only one exit and we have two return her
-	public Contact searchByZipCode(String zipCode) {	
 		for(int i = 0; i < contactList.size(); i++) {
-			Contact contact = (Contact) getByIndex(i);
-			if (zipCode.equalsIgnoreCase(contact.getZipCode())) {
-				return contact;
+			contact = (Contact) getByIndex(i);
+			// Set the string to search based on type
+			switch (type) {
+				case 1:  
+					searchString = contact.getLastName();
+					messageString = "last name";
+                    break;
+				case 2:  
+					searchString = contact.getEmailAddress();
+					messageString = "email address";
+					break;
+				default: 
+					searchString = contact.getZipCode();
+					messageString = "zip code";
+					break;
+			}
+			
+			if (searchStringPassed.equalsIgnoreCase(searchString)){
+				contactFound = true;
+				returnString.append("\n" + contact.toString());
 			}
 		}
-	 	return null;
-	}
 
+		// Return not found message
+		if (contactFound == false) {
+			returnString.append("Unable to locate contacts for the " + messageString + " " + searchStringPassed);
+		}
+		return returnString.toString();
+	}
 
 	
 	//-------------------------- PRIVATE METHODS --------------------------- 
