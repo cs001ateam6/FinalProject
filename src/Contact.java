@@ -23,31 +23,24 @@ import java.io.Serializable;
 
 public class Contact implements Serializable {
 
-	//--------------------------  CLASS VARIABLES -------------------------- 
+	//--------------------------  INSTANCE VARIABLES -------------------------- 
 
 	private static final long serialVersionUID = 1L;
-	private String firstName;
-	private String lastName;
-	private String streetAddress;
-	private String zipCode;
-	private String emailAddress;
-	private String phoneNumber;
-	private String addedNotes;
+	private String firstName = "";
+	private String lastName = "";
+	private String streetAddress = "";
+	private String zipCode = "";
+	private String emailAddress = "";
+	private String phoneNumber = "";
+	private String addedNotes = "";
 
+	
 	//---------------------------- CONSTRUCTORS --------------------------- 
 
 	/**
 	 * Default constructor 
 	 */
 	public Contact() {
-		firstName = " ";
-		lastName = " ";
-		streetAddress = " ";
-		zipCode = " ";
-		emailAddress = " ";
-		phoneNumber = " ";
-		addedNotes = " ";
-		System.out.println("You have initialized all of this contact's variables");
 	}
 	//So this will allow the class to be initialized either as an empty contact or a full contact. -Elena
 	//What happens if certain values are missing? -Elena
@@ -70,6 +63,7 @@ public class Contact implements Serializable {
 	}
 	//I like the edited String names here, much clearer this way -Elena
 	
+	
 	//---------------------------PUBLIC METHODS --------------------------- 
 	
 	/**
@@ -78,7 +72,6 @@ public class Contact implements Serializable {
 	 */
 	public void setFirstName(String fName) {
 		firstName = fName;
-		System.out.println("Contact's first name has been set");
 	}
 
 	/**
@@ -94,7 +87,6 @@ public class Contact implements Serializable {
 	 */
 	public void setLastName(String lName) {
 		lastName = lName;
-		System.out.println("Contact's last name has been set");
 	}
 
 	/**
@@ -112,7 +104,6 @@ public class Contact implements Serializable {
 	 */
 	public void setStreetAddress(String stAddress) {
 		streetAddress = stAddress;
-		System.out.println("Contact's address has been set");
 	}
 
 	/**
@@ -142,7 +133,6 @@ public class Contact implements Serializable {
 	 */
 	public void setEmailAddress(String eAddress) {
 		emailAddress = eAddress;
-		System.out.println("Contact's email address has been set");
 	}
 
 	/**
@@ -158,7 +148,6 @@ public class Contact implements Serializable {
 	 */
 	public void setPhoneNumber(String phnNumber) {
 		phoneNumber = phnNumber;
-		System.out.println("Contact's phone # has been set");
 	}
 
 	/**
@@ -174,7 +163,6 @@ public class Contact implements Serializable {
 	 */
 	public void addNotes(String notes) {
 		addedNotes = notes;
-		System.out.println("Contact's additional notes have been set");
 	}
 
 	/**
@@ -189,7 +177,7 @@ public class Contact implements Serializable {
 	 */
 	//Renamed this method from getContactInfo to toString as advised by professor 
 	public String toString() {
-		String contact_string = "Contact Details: " + firstName + " " + lastName + 
+		String contact_string = "Contact Details: " + lastName + ", " + firstName + 
 				", " + streetAddress + ", " + zipCode + ", " + emailAddress + ", " + phoneNumber + ", " + 
 				"Note: " + addedNotes;
 		return contact_string;
@@ -202,7 +190,6 @@ public class Contact implements Serializable {
 	 * Satyen: This method validates the contact name
 	 */
 	private boolean isNameValid() {
-		System.out.println("You have called isNameValid()");
 		return true;
 	}
 
@@ -210,7 +197,6 @@ public class Contact implements Serializable {
 	 * Satyen: This method validates the email address
 	 */
 	private boolean isEmailValid() {
-		System.out.println("You have called isEmailValid()");
 		return true;
 	}
 

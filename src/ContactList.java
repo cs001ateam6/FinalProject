@@ -21,6 +21,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
@@ -33,7 +34,8 @@ public class ContactList {
 	// Added the word private as advised by professor
 	private List<Contact> contactList = new ArrayList<Contact>();
 	private final String DATA_FILE = "data.ser";
-
+	
+	
 	//---------------------------- CONSTRUCTORS --------------------------- 
 
 	/**
@@ -43,6 +45,7 @@ public class ContactList {
 		// Load data from disk file
 		readFromDisk();
 	}
+	
 	
 	//-------------------------- PUBLIC METHODS --------------------------- 
 	
@@ -63,10 +66,11 @@ public class ContactList {
 		contactPassed.setPhoneNumber(phoneNumber);
 		contactPassed.addNotes(addedNotes);
 		// Check if the contact already exists
-		contactIndex = getIndex(lastName);
+		contactIndex = getIndex(firstName, lastName);
 		
 		// The way this is designed right now, I cannot add multiple contacts with the same last name. -Elena
 		// The first one gets replaced by the second
+		// Satyen: Modified the getIndex method to look for both first and last name 
 		
 		if (contactIndex >= 0){
 			//Update existing contact
@@ -76,8 +80,15 @@ public class ContactList {
 			contactList.add( contactPassed );
 		}	
 	}
-	
 
+	/**
+	 * Add a Contact using contact object to the ContactList. 
+	 * Made this method public as adviced by Mr. John
+	 */
+	public void addContact(Contact contact) {
+		contactList.add(contact);
+	}
+	
 	/**
 	 * This method will save contact list to a disk file
 	 */
@@ -135,9 +146,15 @@ public class ContactList {
 	 * This method will return the entire contact list as a string, sorted by last name.
 	 */
 	public String toString() {
-		
+
 		StringBuilder returnString = new StringBuilder();
-		Iterator<Contact> it=contactList.iterator();
+		
+		// Make a copy of the contact list, to keep the original intact 
+		List<Contact> sortedContactList = cloneContactList();
+		// Sort the cloned list
+		Collections.sort(sortedContactList, new ContactCompare());
+		// Iterate throug the sorted list
+		Iterator<Contact> it=sortedContactList.iterator();
 		
 		//Build a list of all contacts 
 		while(it.hasNext())
@@ -204,13 +221,6 @@ public class ContactList {
 	//-------------------------- PRIVATE METHODS --------------------------- 
 
 	/**
-	 * Add a Contact using contact object to the ContactList. 
-	 */
-	private void addContact(Contact contact) {
-		contactList.add(contact);
-	}
-
-	/**
 	 * This method will read contacts from disk file
 	 */
 	private void readFromDisk() {
@@ -245,23 +255,23 @@ public class ContactList {
 	//Got it -Elena
 
 	/**
-	 * Checks if a contact exists using last name
+	 * Checks if a contact exists using first and last name
 	 * Return either index or -1
 	 */
-	private int getIndex(String lastName) {
+	private int getIndex(String firstName, String lastName) {
 		int returnIndex = -1;
 		int runningIndex = 0;
 		boolean contactFound = false;
-		String contactLastName = new String();
 		Iterator<Contact> it=contactList.iterator();
 
 		// Iterate through the list to find the contact by last name
 		while(it.hasNext() && contactFound == false)
         {
           Contact contact =it.next();
-          contactLastName= contact.getLastName().toUpperCase();
           
-          if (contactLastName.equals(lastName.toUpperCase())){
+          // Check if the first name and last name are same
+          if (contact.getLastName().equalsIgnoreCase(lastName) &&
+        	  contact.getFirstName().equalsIgnoreCase(firstName)){
         	  contactFound = true;
         	  returnIndex = runningIndex; 
           }
@@ -269,6 +279,18 @@ public class ContactList {
         }
 		
 		return returnIndex;
+	}
+
+	/**
+	 * Satyen: Clone a contact list 
+	 * @return
+	 */
+	private List<Contact> cloneContactList() {
+		List<Contact> clone = new ArrayList<Contact>(contactList.size());
+	    for(Contact item: contactList){ 
+	    	clone.add(item);
+	    }
+	    return clone;
 	}
 
 }

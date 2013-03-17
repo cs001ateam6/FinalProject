@@ -22,9 +22,13 @@ import java.util.*;
  */
 public class ContactListUI {
 
+	//-----------------------  INSTANCE VARIABLES ----------------------------- 
+	
 	private ContactList contactList = new ContactList(); 
 	private Scanner scanner = new Scanner(System.in);
 	
+	
+	//-------------------------- PUBLIC METHODS -------------------------------
 	public void Show() {
 		
 		//Define local variable 
@@ -57,7 +61,8 @@ public class ContactListUI {
 		scanner.close();
 	}
 
-
+	
+	//-------------------------- PRIVATE METHODS ------------------------------ 
 	/**
 	 * Main menu 
 	 */
@@ -174,7 +179,6 @@ public class ContactListUI {
 		System.out.println(contactList.toString());
 	}
 
-
 	/**
 	 * Anaga: 
 	 * Use case 3: 
@@ -204,7 +208,6 @@ public class ContactListUI {
 			 System.out.println("No contact found");
 		 }
 	}
-
 
 	/**
 	 * Anaga: 
@@ -269,7 +272,6 @@ public class ContactListUI {
 			System.out.println("No contact found");
 		}
 	}
-
 
 	/**
 	 * Dump the contest to disk before exit
