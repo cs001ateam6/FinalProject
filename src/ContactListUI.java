@@ -36,7 +36,7 @@ public class ContactListUI {
 		int menuSelected = 0;
 
 		// perform the loop based on user input
-		while (menuSelected > -1 && menuSelected < 6  )
+		while (menuSelected > -1 && menuSelected < 3  )
 		{
 			//Display menu 	
 			displayMenu();
@@ -44,16 +44,12 @@ public class ContactListUI {
 			menuSelected = scanner.nextInt();
 			 
 			switch (menuSelected){
-			 	case 1: useCase1();
+			 	case 1: newContact();
 			 			break;
-			 	case 2: useCase2();
+			 	case 2: printContactList();
 			 			break;
-			 	case 3: useCase3();
+			 	case 3: searchBy();
 			 			break;
-			 	case 4: useCase4();
-	 					break;
-			 	case 5: useCase5();
-	 					break;
 			}
 		}
 		
@@ -76,10 +72,8 @@ public class ContactListUI {
 		System.out.println("************************************************");
 		System.out.println("1. Add a new contact");
 		System.out.println("2. Print the contact list");
-		System.out.println("3. Get contact information by last name");
-		System.out.println("4. Get contact information by email address");
-		System.out.println("5. Get contact information by zip code");
-		System.out.println("6. Exit");
+		System.out.println("3. Get contact information");
+		System.out.println("4. Exit");
 		System.out.println("************************************************");
 		System.out.print("Select menu: ");
 		
@@ -92,7 +86,7 @@ public class ContactListUI {
 	 * Use case 1: 
 	 * Enter a new person, Last name contact be blank
 	 */
-	private void useCase1() {
+	private void newContact() {
 		//This needs a better method name -Elena
 		String firstName = new String();
 		String lastName = new String();
@@ -177,7 +171,7 @@ public class ContactListUI {
 	 * information about all contacts to the console, 
 	 * sorted by last name.
 	 */
-	private void useCase2() {
+	private void printContactList() {
 		//This needs a better method name -Elena
 		System.out.println("");
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -187,13 +181,51 @@ public class ContactListUI {
 	}
 
 	/**
-	 * Anaga: 
-	 * Use case 3: 
+	 * Elena: search select method
+	 * This method is called when a user chooses to search for a contact.
+	 * It directs the program to the appropriate getBy method.
+	 */
+	private void searchBy() {
+		
+		//Define local variable
+		int menuSelected = 0;
+
+		// perform loop based on user input
+
+		while ( menuSelected > -1 && menuSelected < 4 ) {
+
+			//menu
+			System.out.println("************************************************");
+			System.out.println("1. Search by last name");
+			System.out.println("2. Search by email");
+			System.out.println("3. Search by zip code");
+			System.out.println("4. Back to Main Menu");
+			System.out.println("************************************************");
+			System.out.println("Select Menu:");
+
+			//accept user choice
+			menuSelected = scanner.nextInt();
+
+			switch (menuSelected) {
+				case 1: getByLastName();
+						break;
+				case 2: getByEmail();
+						break;
+				case 3: getByZip();
+						break;
+			} //close switch
+			
+		} //close while
+		Show();
+	} // close searchBy()
+	
+	/**
+	 * Anaga: Use case 3: 
 	 * This method searches for then returns the contact details for a person with the entered last name
 	 * If last name doesn't match a contact, a message will indicate this
 	 * If there are multiple contacts with the last name, all of them will be listed
 	 */
-	private void useCase3() {
+	private void getByLastName() {
 		//This needs a better method name -Elena
 		//Satyen: Changed this method to handle multiple contacts with same last name
 		String input_name;
@@ -205,14 +237,12 @@ public class ContactListUI {
 	}
 
 	/**
-	 * Anaga: 
-	 * Use case 4: 
+	 * Anaga: Use case 4: 
 	 * This method searches for then returns the contact details for a person with the entered email address
 	 * If the email doesn't match a that of any contact, a message will indicate this
 	 * If there are multiple contacts with the email, all of them will be listed
 	 */
-	private void useCase4() {
-		//This needs a better method name -Elena
+	private void getByEmail() {
 		//Satyen: Changed this method to return multiple contacts
 
 		String emailAddress;
@@ -227,14 +257,12 @@ public class ContactListUI {
 	}
 
 	/**
-	 * Anaga: 
-	 * Use case 5: 
+	 * Anaga: Use case 5: 
 	 * This method searches for then returns the contact details for a person with the entered zip code address
 	 * If the zip code doesn't match a that of any contact, a message will indicate this
 	 * If there are multiple contacts with the zip code, all of them will be listed
 	 */
-	private void useCase5() {
-		//This method should have a different, more descriptive name than "useCase5()" - Elena
+	private void getByZip() {
 		//Satyen: Changed this method to return multiple contacts
 		String zipCode;
 		scanner.nextLine();
@@ -245,14 +273,13 @@ public class ContactListUI {
 	}
 
 	/**
-	 * Dump the contest to disk before exit
+	 * Dump the contact list to disk before exit
 	 */
 	private void writeListToFile() {
 		System.out.println("Updating contact to disk file");
 		contactList.saveToDisk();
 		System.out.println("Done");
 	}
-	//I have deleted a duplicate of this method -Elena
 
 }
 

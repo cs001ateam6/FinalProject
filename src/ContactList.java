@@ -113,25 +113,6 @@ public class ContactList {
 			System.out.println("Error writing objects to the file: " + ioe.getMessage());
 		}
 	}
-
-	/**
-	 * Elena: This method finds contacts by allowing a user to search by a type and a keyword.
-	 * A user can only search by last name, e-mail address, or zip code, which is determined by an integer as follows:
-	 * 1 searches by last name
-	 * 2 searches by e-mail address
-	 * 3 searches by zip code
-	 * For example, to search for a contact by e-mail, a user must first choose type: 1 (for type e-mail address),
-	 * and then input the e-mail address itself.
-	 * 
-	 * It uses a switch statement to determine what it's going to search by, and then a loop to search the contact list by index.
-	 * 
-	 * It will return a contact's information.
-	 */
-	public String searchBy(int type, String keyword){
-		//switch statement
-		//loop
-		return "You have called searchBy()";
-	}
 	
 	/**
 	 * Elena: This method returns a contact by index. 
@@ -153,7 +134,7 @@ public class ContactList {
 		List<Contact> sortedContactList = cloneContactList();
 		// Sort the cloned list
 		Collections.sort(sortedContactList, new ContactCompare());
-		// Iterate throug the sorted list
+		// Iterate through the sorted list
 		Iterator<Contact> it=sortedContactList.iterator();
 		
 		//Build a list of all contacts 
@@ -174,7 +155,7 @@ public class ContactList {
 	 * 		 3 = zip code
 	 */
 	public String searchContacts(Integer type,  String searchStringPassed) {
-		//Satyen: Every method should have only one exit and we have two returns her
+		//Satyen: Every method should have only one exit and we have two returns here
 		Boolean contactFound = false; 
 		StringBuilder returnString = new StringBuilder();
 		Contact contact;
