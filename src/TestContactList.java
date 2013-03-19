@@ -46,7 +46,7 @@ public class TestContactList {
 		// Call searchBy()
 		// Usually findContact() will call searchBy()
 		System.out.println("This test program will now pass '1' and 'Jacobson' to searchBy()");
-		System.out.println(contactList.searchBy(1, "Jacobson"));
+		System.out.println(contactList.searchContacts(1, "Jacobson"));
 		System.out.println();
 		
 		// Print the contact list
