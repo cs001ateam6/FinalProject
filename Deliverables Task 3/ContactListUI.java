@@ -39,15 +39,15 @@ public class ContactListUI {
 			menuSelected = scanner.nextInt();
 			 
 			switch (menuSelected){
-			 	case 1: useCase1();
+			 	case 1: newContact();
 			 			break;
-			 	case 2: useCase2();
+			 	case 2: printContactList();
 			 			break;
-			 	case 3: useCase3();
+			 	case 3: getByLastName();
 			 			break;
-			 	case 4: useCase4();
+			 	case 4: getByEmail();
 	 					break;
-			 	case 5: useCase5();
+			 	case 5: getByZip();
 	 					break;
 			}
 		}
@@ -83,9 +83,8 @@ public class ContactListUI {
 	 * Use case 1: 
 	 * Enter a new person, Last name contact be blank
 	 */
-	public void useCase1() {
+	public void newContact() {
 		//will be private (public for testing purposes)
-		//This needs a better method name -Elena
 		String firstName = new String();
 		String lastName = new String();
 		String zipCode = new String();
@@ -166,9 +165,8 @@ public class ContactListUI {
 	 * information about all contacts to the console, 
 	 * sorted by last name.
 	 */
-	public void useCase2() {
+	public void printContactList() {
 		//Will be private
-		//This needs a better method name -Elena
 		System.out.println("");
 		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("\t List of all contacts");
@@ -177,40 +175,35 @@ public class ContactListUI {
 	}
 
 
-	/**
-	 * Anaga: 
+	/** 
 	 * Use case 3: 
 	 * This method searches for then returns the contact details for a person with the entered last name
 	 * If last name doesn't match a contact, a message will indicate this
 	 * If there are multiple contacts with the last name, all of them will be listed
 	 */
-	private void useCase3() {
+	private void getByLastName() {
 		//code
-		//This needs a better method name -- Elena
+
 	}
 
 
 	/**
-	 * Anaga: 
 	 * Use case 4: 
 	 * This method searches for then returns the contact details for a person with the entered email address
 	 * If the email doesn't match a that of any contact, a message will indicate this
 	 * If there are multiple contacts with the email, all of them will be listed
 	 */
-	private void useCase4() {
-		//This needs a better method name -Elena
+	private void getByEmail() {
 		//code
 	}
 
 	/**
-	 * Anaga: 
 	 * Use case 5: 
 	 * This method searches for then returns the contact details for a person with the entered zip code address
 	 * If the zip code doesn't match a that of any contact, a message will indicate this
 	 * If there are multiple contacts with the zip code, all of them will be listed
 	 */
-	private void useCase5() {
-		//This method should have a different, more descriptive name than "useCase5()" - Elena
+	private void getByZip() {
 		//code
 	}
 
@@ -223,8 +216,6 @@ public class ContactListUI {
 		contactList.saveToDisk();
 		System.out.println("Done");
 	}
-	//I have deleted a duplicate of this method -Elena
-
 }
 
 
