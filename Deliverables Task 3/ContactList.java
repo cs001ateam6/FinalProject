@@ -109,13 +109,8 @@ public class ContactList {
 	 * 1 searches by last name
 	 * 2 searches by e-mail address
 	 * 3 searches by zip code
-	 * For example, to search for a contact by e-mail, a user must first choose type: 1 (for type e-mail address),
-	 * and then input the e-mail address itself.
-	 * 
-	 * It uses a switch statement to determine what it's going to search by, and then a loop to search the contact list by index.
-	 * 
-	 * It will return a contact's information.
 	 */
+	// Anaga: this method will call another method. (1) searchByLastName(), (2) searchByEmail(), or (3) searchByZipCode()
 	public String searchBy(int type, String keyword){
 		//switch statement
 		//loop
@@ -144,7 +139,7 @@ public class ContactList {
 	 * It returns that contact (an object of class Contact)
 	 * If there is no match, nothing is returned.
 	 */
-	//Satyen: Every method should have only one exit and we have two returns her
+	//Satyen: Every method should have only one exit and we have two returns here
 	public Contact searchByLastName(String lastName) {
 		//code
 		System.out.println("You have called searchByLastName()");
@@ -156,7 +151,7 @@ public class ContactList {
 	 * It returns that contact (an object of class Contact).
 	 * If there is no match, nothing is returned.
 	 */
-	//Satyen: Every method should have only one exit and we have two return her
+	//Satyen: Every method should have only one exit and we have two return here
 	public Contact searchByEmail(String emailAddress) {
 		//code
 		System.out.println("You have called searchByEmail()");
@@ -168,7 +163,7 @@ public class ContactList {
 	 * If the zip code matches a contact's zip code, the method returns the contact
 	 * If there is no match, nothing is returned
 	 */
-	//Satyen: Every method should have only one exit and we have two return her
+	//Satyen: Every method should have only one exit and we have two return here
 	public Contact searchByZipCode(String zipCode) {	
 		//code
 		System.out.println("You have called searchByZipCode()");
