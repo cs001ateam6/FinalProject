@@ -1,0 +1,301 @@
+Error reading from the file: data.ser (No such file or directory)
+Created new data.ser file.
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 1
+
+-------------------------------------------------
+Enter contact details
+-------------------------------------------------
+-- Enter last name or X to exit : Holmes
+-- First name: Sherlock
+-- Street address: 221B Baker St.
+-- Zip code: 99999
+-- Email address: sherlock@consult.com
+-- Phone number: 234-234-2345
+-- Added notes: Text Only
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 2
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+	 List of all contacts
+++++++++++++++++++++++++++++++++++++++++++++++++
+Holmes, Sherlock         |221B Baker St., 99999, sherlock@consult.com, 234-234-2345, Note: Text Only
+
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 1
+
+-------------------------------------------------
+Enter contact details
+-------------------------------------------------
+-- Enter last name or X to exit : Watson
+-- First name: John
+-- Street address: 221B Baker St.
+-- Zip code: 99999
+-- Email address: john@doctorsunion.org
+-- Phone number: 575-345-3456
+-- Added notes: Get Sherlock!
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 2
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+	 List of all contacts
+++++++++++++++++++++++++++++++++++++++++++++++++
+Holmes, Sherlock         |221B Baker St., 99999, sherlock@consult.com, 234-234-2345, Note: Text Only
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 1
+
+-------------------------------------------------
+Enter contact details
+-------------------------------------------------
+-- Enter last name or X to exit : Moriarty
+-- First name: James
+-- Street address: 6735 Cravenwood Lane
+-- Zip code: 98985
+-- Email address: james.moriarty@oxford.edu
+-- Phone number: 636-753-5676
+-- Added notes: Highly Dangerous
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 2
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+	 List of all contacts
+++++++++++++++++++++++++++++++++++++++++++++++++
+Holmes, Sherlock         |221B Baker St., 99999, sherlock@consult.com, 234-234-2345, Note: Text Only
+Moriarty, James          |6735 Cravenwood Lane, 98985, james.moriarty@oxford.edu, 636-753-5676, Note: Highly Dangerous
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 1
+
+-------------------------------------------------
+Enter contact details
+-------------------------------------------------
+-- Enter last name or X to exit : Watson
+-- First name: Harriet
+-- Street address: 1178 Albertson Sq.
+-- Zip code: 98995
+-- Email address: harry538x3@gmail.com
+-- Phone number: 256-356-3345
+-- Added notes: Goes By Harry
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 2
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+	 List of all contacts
+++++++++++++++++++++++++++++++++++++++++++++++++
+Holmes, Sherlock         |221B Baker St., 99999, sherlock@consult.com, 234-234-2345, Note: Text Only
+Moriarty, James          |6735 Cravenwood Lane, 98985, james.moriarty@oxford.edu, 636-753-5676, Note: Highly Dangerous
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+Watson, Harriet          |1178 Albertson Sq., 98995, harry538x3@gmail.com, 256-356-3345, Note: Goes By Harry
+
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 1
+
+-------------------------------------------------
+Enter contact details
+-------------------------------------------------
+-- Enter last name or X to exit : Adler
+-- First name: Irene
+-- Street address: 1213 Serpentine Ave.
+-- Zip code: 98999
+-- Email address: primadonna@warsawopera.net
+-- Phone number: 235-356-3222
+-- Added notes: Fond Of Lies And Deceit
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 2
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+	 List of all contacts
+++++++++++++++++++++++++++++++++++++++++++++++++
+Adler, Irene             |1213 Serpentine Ave., 98999, primadonna@warsawopera.net, 235-356-3222, Note: Fond Of Lies And Deceit
+Holmes, Sherlock         |221B Baker St., 99999, sherlock@consult.com, 234-234-2345, Note: Text Only
+Moriarty, James          |6735 Cravenwood Lane, 98985, james.moriarty@oxford.edu, 636-753-5676, Note: Highly Dangerous
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+Watson, Harriet          |1178 Albertson Sq., 98995, harry538x3@gmail.com, 256-356-3345, Note: Goes By Harry
+
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 3
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+1
+------------------------------------------------- 
+ Please Enter the last name of the contact : Watson
+
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+Watson, Harriet          |1178 Albertson Sq., 98995, harry538x3@gmail.com, 256-356-3345, Note: Goes By Harry
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+1
+------------------------------------------------- 
+ Please Enter the last name of the contact : Moriarty
+
+Moriarty, James          |6735 Cravenwood Lane, 98985, james.moriarty@oxford.edu, 636-753-5676, Note: Highly Dangerous
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+1
+------------------------------------------------- 
+ Please Enter the last name of the contact : Wilberton
+Unable to locate contacts for the last name Wilberton
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+2
+-------------------------------------------------
+ Please Enter the email address of the contact : john@doctorsunion.org
+
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+2
+-------------------------------------------------
+ Please Enter the email address of the contact : fakeaddress@email.com
+Unable to locate contacts for the email address fakeaddress@email.com
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+3
+-------------------------------------------------
+
+ Please Enter the Zip Code of the contact : 99999
+
+Holmes, Sherlock         |221B Baker St., 99999, sherlock@consult.com, 234-234-2345, Note: Text Only
+Watson, John             |221B Baker St., 99999, john@doctorsunion.org, 575-345-3456, Note: Get Sherlock!
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+3
+-------------------------------------------------
+
+ Please Enter the Zip Code of the contact : 94040
+Unable to locate contacts for the zip code 94040
+************************************************
+1. Search by last name
+2. Search by email
+3. Search by zip code
+4. Back to Main Menu
+************************************************
+Select Menu:
+4
+************************************************
+Main Menu:
+************************************************
+1. Add a new contact
+2. Print the contact list
+3. Get contact information
+4. Exit
+************************************************
+Select menu: 4
+Updating contact to disk file
+Done
+Thank you
